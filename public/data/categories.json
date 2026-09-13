@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "id": "crossbody",
+      "name": "Crossbody",
+      "slug": "crossbody"
+    },
+    {
+      "id": "tote",
+      "name": "Totes",
+      "slug": "tote"
+    },
+    {
+      "id": "shoulder",
+      "name": "Shoulder",
+      "slug": "shoulder"
+    },
+    {
+      "id": "travel",
+      "name": "Travel",
+      "slug": "travel"
+    }
+  ]
+}

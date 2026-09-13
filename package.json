@@ -1,0 +1,21 @@
+{
+  "name": "static-bag",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.5"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.8",
+    "chocolat": "^1.1.3",
+    "isotope-layout": "^3.0.6",
+    "swiper": "^14.2.0"
+  }
+}

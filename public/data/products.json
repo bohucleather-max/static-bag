@@ -1,0 +1,160 @@
+{
+  "products": [
+    {
+      "id": "product-001",
+      "slug": "milano-crossbody",
+      "name": "Milano Crossbody",
+      "description": "A softly structured crossbody with an adjustable strap and a magnetic flap, sized for a phone, keys and a small notebook.",
+      "price": 168,
+      "currency": "USD",
+      "category": "crossbody",
+      "featured": true,
+      "available": true,
+      "materials": "Full-grain leather · Cotton lining · Brass hardware",
+      "colors": [
+        "Chestnut",
+        "Black",
+        "Tan"
+      ],
+      "images": {
+        "main": "images/products/product-001.jpg"
+      }
+    },
+    {
+      "id": "product-002",
+      "slug": "atelier-tote",
+      "name": "Atelier Tote",
+      "description": "An open tote that takes a 14-inch laptop flat, with a base cut from the firmest part of the hide so it keeps its shape when full.",
+      "price": 220,
+      "currency": "USD",
+      "category": "tote",
+      "featured": true,
+      "available": true,
+      "materials": "Vegetable-tanned leather · Cotton lining",
+      "colors": [
+        "Tan",
+        "Black",
+        "Olive"
+      ],
+      "images": {
+        "main": "images/products/product-002.jpg"
+      }
+    },
+    {
+      "id": "product-003",
+      "slug": "sol-shoulder-bag",
+      "name": "Sol Shoulder Bag",
+      "description": "A single-strap shoulder bag that sits close to the body, with an inner zip pocket and a strap that shortens to a grab handle.",
+      "price": 186,
+      "currency": "USD",
+      "category": "shoulder",
+      "featured": true,
+      "available": true,
+      "materials": "Pebbled leather · Brass zip",
+      "colors": [
+        "Cognac",
+        "Black",
+        "Navy"
+      ],
+      "images": {
+        "main": "images/products/product-003.jpg"
+      }
+    },
+    {
+      "id": "product-004",
+      "slug": "nocturne-mini",
+      "name": "Nocturne Mini",
+      "description": "The smallest bag we make — phone, cards and keys, nothing more. The strap is long enough to wear across the body.",
+      "price": 142,
+      "currency": "USD",
+      "category": "crossbody",
+      "featured": false,
+      "available": true,
+      "materials": "Full-grain leather · Edge-painted",
+      "colors": [
+        "Black",
+        "Bone"
+      ],
+      "images": {
+        "main": "images/products/product-004.jpg"
+      }
+    },
+    {
+      "id": "product-005",
+      "slug": "verdant-bucket",
+      "name": "Verdant Bucket",
+      "description": "A drawstring bucket that opens wide and closes tight, lined in cotton so nothing catches on the seams.",
+      "price": 194,
+      "currency": "USD",
+      "category": "shoulder",
+      "featured": false,
+      "available": true,
+      "materials": "Vegetable-tanned leather · Cotton lining",
+      "colors": [
+        "Olive",
+        "Chestnut",
+        "Black"
+      ],
+      "images": {
+        "main": "images/products/product-005.jpg"
+      }
+    },
+    {
+      "id": "product-006",
+      "slug": "campo-market-tote",
+      "name": "Campo Market Tote",
+      "description": "A flat-packing tote for the market and back, in waxed canvas with leather handles that darken where you hold them.",
+      "price": 128,
+      "currency": "USD",
+      "category": "tote",
+      "featured": false,
+      "available": true,
+      "materials": "Waxed canvas · Leather trim",
+      "colors": [
+        "Sand",
+        "Charcoal"
+      ],
+      "images": {
+        "main": "images/products/product-006.jpg"
+      }
+    },
+    {
+      "id": "product-007",
+      "slug": "metro-sling",
+      "name": "Metro Sling",
+      "description": "A sling worn across the chest or round the waist, with the main zip facing your body so it stays shut in a crowd.",
+      "price": 154,
+      "currency": "USD",
+      "category": "crossbody",
+      "featured": false,
+      "available": true,
+      "materials": "Full-grain leather · Brass zip",
+      "colors": [
+        "Navy",
+        "Chestnut"
+      ],
+      "images": {
+        "main": "images/products/product-007.jpg"
+      }
+    },
+    {
+      "id": "product-008",
+      "slug": "weekender-duffel",
+      "name": "Weekender Duffel",
+      "description": "A two-night duffel with a zip that runs the full length, rolled handles and a shoulder strap for the walk from the platform.",
+      "price": 248,
+      "currency": "USD",
+      "category": "travel",
+      "featured": false,
+      "available": true,
+      "materials": "Vegetable-tanned leather · Brass hardware",
+      "colors": [
+        "Black",
+        "Cognac"
+      ],
+      "images": {
+        "main": "images/products/product-008.jpg"
+      }
+    }
+  ]
+}

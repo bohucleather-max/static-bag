@@ -1,0 +1,1572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>BOHUC — Leather Bags</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="author" content="BOHUC" />
+    <meta
+      name="keywords"
+      content="leather bag, tote, crossbody, shoulder bag, travel bag, handmade"
+    />
+    <meta
+      name="description"
+      content="BOHUC makes leather bags by hand — totes, crossbodies, shoulder bags and weekenders, cut and stitched in a small studio."
+    />
+
+    <script type="module" src="/src/mock-home.js"></script>
+
+    <!-- The gallery and the studio address are fetched by the bundle. Preloading
+         them here starts both requests alongside the JS download instead of
+         after it, so the first screen is not waiting on a second round trip. -->
+    <link rel="preload" href="/data/products.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/site.json" as="fetch" crossorigin />
+    <link rel="preload" href="/images/brand/logo.png" as="image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="bg-body homepage post-template"
+    data-bs-spy="scroll"
+    data-bs-target="#header-nav"
+    tabindex="0"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <defs>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="menu"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="instagram"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="4"
+            d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="facebook"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="twitter"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="4"
+            fill-rule="evenodd"
+            d="M15.022 3.343c.508-.087 1.077-.116 1.613-.025a4.85 4.85 0 0 1 2.54 1.273c.456.01.905-.08 1.302-.208a5.4 5.4 0 0 0 1.098-.501l.009-.006a.75.75 0 0 1 1.042 1.037c-.207.315-.496.877-.819 1.507l-.155.301c-.185.36-.375.724-.552 1.036c-.111.196-.23.395-.35.567v.274A12.34 12.34 0 0 1 8.287 21.03a12.3 12.3 0 0 1-6.694-1.97a.75.75 0 0 1 .5-1.375q.45.055.905.055a7.5 7.5 0 0 0 3.128-.696a4.86 4.86 0 0 1-2.61-2.923a.75.75 0 0 1 .147-.722l.01-.01A4.85 4.85 0 0 1 2.05 9.793V9.74a.75.75 0 0 1 .553-.724A4.84 4.84 0 0 1 2.09 6.84a4.9 4.9 0 0 1 .65-2.442a.75.75 0 0 1 1.232-.1a10.9 10.9 0 0 0 7.006 3.93a4.85 4.85 0 0 1 2.562-4.406c.402-.214.934-.385 1.482-.479m-11.28 7.548a3.35 3.35 0 0 0 2.503 2.164a.75.75 0 0 1 .072 1.453q-.409.124-.834.173a3.36 3.36 0 0 0 2.59 1.3a.75.75 0 0 1 .45 1.339a9 9 0 0 1-3.548 1.695a10.8 10.8 0 0 0 3.313.515h.009A10.84 10.84 0 0 0 19.25 8.607v-.535a.75.75 0 0 1 .186-.495c.07-.079.19-.261.36-.56c.16-.282.338-.622.523-.981l.033-.066a5 5 0 0 1-1.593.097a.75.75 0 0 1-.47-.237a3.35 3.35 0 0 0-1.904-1.032a3.4 3.4 0 0 0-1.11.025a3.6 3.6 0 0 0-1.028.323a3.35 3.35 0 0 0-1.678 3.74a.75.75 0 0 1-.767.925a12.4 12.4 0 0 1-8.149-3.627a3.4 3.4 0 0 0-.063.657v.002a3.34 3.34 0 0 0 1.486 2.785A.75.75 0 0 1 4.64 11a5 5 0 0 1-.897-.11"
+            clip-rule="evenodd"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="pinterest"
+          viewBox="0 0 15 15"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m4.5 13.5l3-7m-3.236 3a2.989 2.989 0 0 1-.764-2V7A3.5 3.5 0 0 1 7 3.5h1A3.5 3.5 0 0 1 11.5 7v.5a3 3 0 0 1-3 3a2.081 2.081 0 0 1-1.974-1.423L6.5 9m1 5.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="basketball"
+          viewBox="0 0 24 24"
+        >
+          <g fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M3.34 17c2.76 4.783 8.876 6.42 13.66 3.66a9.96 9.96 0 0 0 4.196-4.731a9.99 9.99 0 0 0-.536-8.93a9.99 9.99 0 0 0-7.465-4.928A9.96 9.96 0 0 0 7 3.339C2.217 6.101.578 12.217 3.34 17Z"
+            />
+            <path
+              stroke-linecap="round"
+              d="M16.95 20.573S16.01 13.982 14 10.5S7.05 3.427 7.05 3.427"
+            />
+            <path
+              stroke-linecap="round"
+              d="M21.864 12.58c-5.411-1.187-12.805 3.768-14.287 8.238m8.837-17.609c-1.488 4.42-8.74 9.303-14.125 8.243"
+            />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="skype"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            color="currentColor"
+          >
+            <path
+              d="M15 10c0-1.105-1.343-2-3-2s-3 .895-3 2s1.343 2 3 2s3 .895 3 2s-1.343 2-3 2s-3-.895-3-2"
+            />
+            <path
+              d="M18 20a4 4 0 0 0 2.954-6.697c-.675-.739-.898-1.042-.986-2.026a7.97 7.97 0 0 0-2.311-4.934a8 8 0 0 0-8.054-1.977c-.943.295-1.31.205-2.254-.133a4 4 0 0 0-4.303 6.464c.675.739.898 1.042.986 2.026a7.97 7.97 0 0 0 2.311 4.934a8 8 0 0 0 8.054 1.977c.943-.295 1.31-.205 2.254.133c.421.15.875.233 1.349.233"
+            />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="linkedin"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M4.5 9.5H4c-.943 0-1.414 0-1.707.293S2 10.557 2 11.5V20c0 .943 0 1.414.293 1.707S3.057 22 4 22h.5c.943 0 1.414 0 1.707-.293S6.5 20.943 6.5 20v-8.5c0-.943 0-1.414-.293-1.707S5.443 9.5 4.5 9.5m2-5.25a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0m5.826 5.25H11.5c-.943 0-1.414 0-1.707.293S9.5 10.557 9.5 11.5V20c0 .943 0 1.414.293 1.707S10.557 22 11.5 22h.5c.943 0 1.414 0 1.707-.293S14 20.943 14 20v-3.5c0-1.657.528-3 2.088-3c.78 0 1.412.672 1.412 1.5v4.5c0 .943 0 1.414.293 1.707s.764.293 1.707.293h.499c.942 0 1.414 0 1.707-.293c.292-.293.293-.764.293-1.706L22 14c0-2.486-2.364-4.5-4.703-4.5c-1.332 0-2.52.652-3.297 1.673c0-.63 0-.945-.137-1.179a1 1 0 0 0-.358-.358c-.234-.137-.549-.137-1.179-.137"
+            color="currentColor"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="calendar"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          >
+            <rect width="20" height="18" x="2" y="4" rx="4" />
+            <path d="M8 2v4m8-4v4M2 10h20" />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="shopping-bag"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          >
+            <path
+              d="M3.977 9.84A2 2 0 0 1 5.971 8h12.058a2 2 0 0 1 1.994 1.84l.803 10A2 2 0 0 1 18.833 22H5.167a2 2 0 0 1-1.993-2.16l.803-10Z"
+            />
+            <path d="M16 11V6a4 4 0 0 0-4-4v0a4 4 0 0 0-4 4v5" />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="gift"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          >
+            <rect width="18" height="14" x="3" y="8" rx="2" />
+            <path d="M12 5a3 3 0 1 0-3 3m6 0a3 3 0 1 0-3-3m0 0v17m9-7H3" />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="arrow-cycle"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          >
+            <path
+              d="M22 12c0 6-4.39 10-9.806 10C7.792 22 4.24 19.665 3 16m-1-4C2 6 6.39 2 11.806 2C16.209 2 19.76 4.335 21 8"
+            />
+            <path d="m7 17l-4-1l-1 4M17 7l4 1l1-4" />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="link"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M12 19a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm5 0a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm0-4a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm-5 0a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm7-12h-1V2a1 1 0 0 0-2 0v1H8V2a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Zm1 17a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9h16Zm0-11H4V6a1 1 0 0 1 1-1h1v1a1 1 0 0 0 2 0V5h8v1a1 1 0 0 0 2 0V5h1a1 1 0 0 1 1 1ZM7 15a1 1 0 1 0-1-1a1 1 0 0 0 1 1Zm0 4a1 1 0 1 0-1-1a1 1 0 0 0 1 1Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="arrow-left"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M17 11H9.41l3.3-3.29a1 1 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33a1 1 0 0 0 0 .76a1 1 0 0 0 .21.33l5 5a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42L9.41 13H17a1 1 0 0 0 0-2Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="arrow-right"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="play"
+          viewBox="0 0 24 24"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <path
+              d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z"
+            />
+            <path
+              fill="currentColor"
+              d="M5.669 4.76a1.469 1.469 0 0 1 2.04-1.177c1.062.454 3.442 1.533 6.462 3.276c3.021 1.744 5.146 3.267 6.069 3.958c.788.591.79 1.763.001 2.356c-.914.687-3.013 2.19-6.07 3.956c-3.06 1.766-5.412 2.832-6.464 3.28c-.906.387-1.92-.2-2.038-1.177c-.138-1.142-.396-3.735-.396-7.237c0-3.5.257-6.092.396-7.235Z"
+            />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="category"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M19 5.5h-6.28l-.32-1a3 3 0 0 0-2.84-2H5a3 3 0 0 0-3 3v13a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-10a3 3 0 0 0-3-3Zm1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1h4.56a1 1 0 0 1 .95.68l.54 1.64a1 1 0 0 0 .95.68h7a1 1 0 0 1 1 1Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="calendar"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="heart"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M20.16 4.61A6.27 6.27 0 0 0 12 4a6.27 6.27 0 0 0-8.16 9.48l7.45 7.45a1 1 0 0 0 1.42 0l7.45-7.45a6.27 6.27 0 0 0 0-8.87Zm-1.41 7.46L12 18.81l-6.75-6.74a4.28 4.28 0 0 1 3-7.3a4.25 4.25 0 0 1 3 1.25a1 1 0 0 0 1.42 0a4.27 4.27 0 0 1 6 6.05Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="plus"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M19 11h-6V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="minus"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M19 11H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="cart"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19ZM19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2Zm-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="check"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="trash"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M10 18a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1ZM20 6h-4V5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H4a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2ZM10 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm7 14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8h10Zm-3-1a1 1 0 0 0 1-1v-6a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="star-outline"
+          viewBox="0 0 15 15"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M7.5 9.804L5.337 11l.413-2.533L4 6.674l2.418-.37L7.5 4l1.082 2.304l2.418.37l-1.75 1.793L9.663 11L7.5 9.804Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="star-solid"
+          viewBox="0 0 15 15"
+        >
+          <path
+            fill="currentColor"
+            d="M7.953 3.788a.5.5 0 0 0-.906 0L6.08 5.85l-2.154.33a.5.5 0 0 0-.283.843l1.574 1.613l-.373 2.284a.5.5 0 0 0 .736.518l1.92-1.063l1.921 1.063a.5.5 0 0 0 .736-.519l-.373-2.283l1.574-1.613a.5.5 0 0 0-.283-.844L8.921 5.85l-.968-2.062Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="search"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="user"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M15.71 12.71a6 6 0 1 0-7.42 0a10 10 0 0 0-6.22 8.18a1 1 0 0 0 2 .22a8 8 0 0 1 15.9 0a1 1 0 0 0 1 .89h.11a1 1 0 0 0 .88-1.1a10 10 0 0 0-6.25-8.19ZM12 12a4 4 0 1 1 4-4a4 4 0 0 1-4 4Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="close"
+          viewBox="0 0 15 15"
+        >
+          <path
+            fill="currentColor"
+            d="M7.953 3.788a.5.5 0 0 0-.906 0L6.08 5.85l-2.154.33a.5.5 0 0 0-.283.843l1.574 1.613l-.373 2.284a.5.5 0 0 0 .736.518l1.92-1.063l1.921 1.063a.5.5 0 0 0 .736-.519l-.373-2.283l1.574-1.613a.5.5 0 0 0-.283-.844L8.921 5.85l-.968-2.062Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="quote"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="folder"
+          viewBox="0 0 18 18"
+          fill="none"
+        >
+          <path
+            d="M14.0946 4.04689H9.56953L9.33895 3.3259C9.18947 2.90285 8.9122 2.53678 8.54555 2.27842C8.1789 2.02006 7.74102 1.8822 7.29258 1.88393H4.00687C3.43356 1.88393 2.88374 2.11181 2.47835 2.51744C2.07296 2.92308 1.84521 3.47324 1.84521 4.04689V13.4197C1.84521 13.9934 2.07296 14.5435 2.47835 14.9492C2.88374 15.3548 3.43356 15.5827 4.00687 15.5827H14.0946C14.6679 15.5827 15.2177 15.3548 15.6231 14.9492C16.0285 14.5435 16.2562 13.9934 16.2562 13.4197V6.20985C16.2562 5.6362 16.0285 5.08604 15.6231 4.68041C15.2177 4.27477 14.6679 4.04689 14.0946 4.04689ZM14.8151 13.4197C14.8151 13.6109 14.7392 13.7943 14.6041 13.9295C14.469 14.0648 14.2857 14.1407 14.0946 14.1407H4.00687C3.81577 14.1407 3.63249 14.0648 3.49736 13.9295C3.36223 13.7943 3.28632 13.6109 3.28632 13.4197V4.04689C3.28632 3.85567 3.36223 3.67229 3.49736 3.53707C3.63249 3.40186 3.81577 3.3259 4.00687 3.3259H7.29258C7.44364 3.32551 7.591 3.37264 7.71384 3.46061C7.83667 3.54859 7.92877 3.67297 7.97711 3.81617L8.3662 4.99859C8.41454 5.1418 8.50664 5.26618 8.62947 5.35415C8.75231 5.44213 8.89967 5.48925 9.05073 5.48886H14.0946C14.2857 5.48886 14.469 5.56483 14.6041 5.70004C14.7392 5.83525 14.8151 6.01863 14.8151 6.20985V13.4197Z"
+            fill="black"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="clock"
+          viewBox="0 0 18 18"
+          fill="none"
+        >
+          <path
+            d="M11.0931 9.19042L9.58134 8.3173V5.12838C9.58134 4.93716 9.50543 4.75377 9.3703 4.61856C9.23517 4.48335 9.05189 4.40739 8.86079 4.40739C8.66969 4.40739 8.48641 4.48335 8.35128 4.61856C8.21615 4.75377 8.14024 4.93716 8.14024 5.12838V8.73331C8.14024 8.85987 8.17354 8.9842 8.23678 9.0938C8.30002 9.2034 8.39098 9.29441 8.50051 9.35769L10.3725 10.4392C10.4545 10.4873 10.5452 10.5186 10.6393 10.5315C10.7335 10.5444 10.8292 10.5385 10.9211 10.5142C11.013 10.4899 11.0991 10.4477 11.1746 10.3899C11.2501 10.3322 11.3134 10.26 11.3609 10.1777C11.4084 10.0953 11.4392 10.0044 11.4515 9.91012C11.4637 9.81583 11.4572 9.72004 11.4323 9.62828C11.4074 9.53652 11.3646 9.45059 11.3064 9.37544C11.2482 9.3003 11.1757 9.23741 11.0931 9.19042ZM8.86079 1.52344C7.43567 1.52344 6.04256 1.94629 4.85762 2.73852C3.67268 3.53075 2.74913 4.65678 2.20376 5.97421C1.6584 7.29165 1.5157 8.74131 1.79373 10.1399C2.07175 11.5385 2.75801 12.8231 3.76572 13.8315C4.77343 14.8398 6.05733 15.5265 7.45506 15.8047C8.8528 16.0828 10.3016 15.9401 11.6182 15.3944C12.9349 14.8487 14.0602 13.9246 14.852 12.7389C15.6437 11.5532 16.0663 10.1593 16.0663 8.73331C16.0642 6.82178 15.3044 4.98914 13.9535 3.63748C12.6027 2.28582 10.7712 1.52554 8.86079 1.52344ZM8.86079 14.5012C7.7207 14.5012 6.60621 14.1629 5.65826 13.5291C4.7103 12.8954 3.97146 11.9945 3.53517 10.9406C3.09887 9.88665 2.98472 8.72691 3.20714 7.60805C3.42956 6.48919 3.97857 5.46145 4.78474 4.65479C5.5909 3.84814 6.61802 3.2988 7.73621 3.07624C8.8544 2.85369 10.0134 2.96791 11.0667 3.40447C12.12 3.84103 13.0203 4.58031 13.6537 5.52884C14.2871 6.47737 14.6252 7.59253 14.6252 8.73331C14.6233 10.2625 14.0154 11.7284 12.9347 12.8097C11.8541 13.891 10.389 14.4993 8.86079 14.5012Z"
+            fill="black"
+          />
+        </symbol>
+
+        <!-- bag-making stages -->
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="craft-hide"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            d="M3.8 8.2c.5-2.5 2.7-3.9 5-3.2 1.9.6 3.8.5 5.6-.3 2.3-1 4.4.4 4.6 2.9.1 1.6-.2 2.9-.8 4.2-.6 1.4-.7 2.8-.3 4.2.5 2.1-1.1 3.7-3.2 3.2-1.6-.4-3.2-.3-4.7.3-2.3.9-4.4-.5-4.5-3-.1-1.5.2-2.9.8-4.2.5-1.3.7-2.7.5-4.1Z"
+          />
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="craft-cut"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 2.5v6" />
+            <path d="M4.5 8.5h15a7.5 7.5 0 0 1-15 0Z" />
+            <path d="M3 20.5h18" stroke-dasharray="2.5 2.5" />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="craft-skive"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 18.5H3l9.5-4.5H21z" />
+            <path d="M7.6 9.6 11.4 12.8" />
+            <path d="M4.2 6.4 7.8 5.2 8.9 8.8Z" />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="craft-stitch"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="18.4" cy="5.6" r="1.7" />
+            <path d="M17.2 6.8 7.5 16.5" />
+            <path d="M3 20.5h18" stroke-dasharray="2.5 2.5" />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="craft-burnish"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20.5 12v6.5H9.5a3.25 3.25 0 0 1 0-6.5z" />
+            <path d="M4.6 7.4 6.2 9M10.2 4.4V6.7M15.8 6.2 14.6 8.2" />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="craft-finish"
+          viewBox="0 0 24 24"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5.4 8.4h13.2l-1.2 10.2a2 2 0 0 1-2 1.8H8.6a2 2 0 0 1-2-1.8z" />
+          <path d="M9 8.4V6.6a3 3 0 0 1 6 0v1.8" />
+          <path d="M9.6 13.4 11.4 15.2 14.6 12" />
+          </g>
+        </symbol>
+        <symbol
+          xmlns="http://www.w3.org/2000/svg"
+          id="whatsapp"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.25 8.25-8.25m-3.52 3.66c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.74 2.79 4.29 3.8 2.12.84 2.55.67 3.01.63.47-.04 1.51-.62 1.72-1.21.21-.6.21-1.11.15-1.21-.07-.11-.23-.17-.48-.29-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01"
+          />
+        </symbol>
+      </defs>
+    </svg>
+    <a class="menu-btn"><span></span></a>
+
+    <div class="container-fluid overflow-hidden">
+      <header
+        id="header-nav"
+        class="col-lg-2 position-fixed px-5 bg-white h-100"
+      >
+        <div
+          class="header-wrap d-flex flex-column justify-content-between h-100"
+        >
+          <div class="navigation">
+            <div class="site-logo my-5 pb-5">
+              <a href="index.html">
+                <img
+                  src="/images/brand/logo.png"
+                  alt="BOHUC"
+                  class="img-fluid"
+                  width="1346"
+                  height="253"
+                />
+              </a>
+            </div>
+
+            <nav id="one-page-menu" class="vertical-menu my-5">
+              <ul class="menu-list list-unstyled">
+                <li class="pb-3">
+                  <a href="#home" class="nav-link text-uppercase">Bags</a>
+                </li>
+                <li class="pb-3">
+                  <a href="#about" class="nav-link text-uppercase">Our craft</a>
+                </li>
+                <li class="pb-3">
+                  <a href="#making" class="nav-link text-uppercase"
+                    >How it's made</a
+                  >
+                </li>
+                <li class="pb-3">
+                  <a href="#experience" class="nav-link text-uppercase"
+                    >Everyday carry</a
+                  >
+                </li>
+                <li class="pb-3">
+                  <a href="#portfolio" class="nav-link text-uppercase"
+                    >New in</a
+                  >
+                </li>
+                <li class="pb-3">
+                  <a href="#how-to-order" class="nav-link text-uppercase"
+                    >How to order</a
+                  >
+                </li>
+                <li class="pb-3">
+                  <a href="#contact" class="nav-link text-uppercase">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="mt-5">
+            <div class="email-links">
+              <a
+                href="mailto:studio@will-objects.com"
+                class="py-3 my-3 border-bottom border-black d-flex"
+                >studio@will-objects.com</a
+              >
+            </div>
+            <ul
+              class="list-unstyled d-flex justify-content-start flex-wrap gap-2"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="fw-bold pe-1 social-link"
+                  aria-label="Facebook"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="fw-bold pe-1 social-link"
+                  aria-label="Instagram"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="fw-bold pe-1 social-link"
+                  aria-label="WhatsApp"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <use xlink:href="#whatsapp"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="mt-5 pt-4 col-lg-10 offset-lg-2">
+        <div class="container">
+          <div class="justify-content-center px-1 mx-1 px-xl-5 mx-xl-5">
+            <section id="home">
+              <div class="row" id="home-gallery"></div>
+            </section>
+
+            <section id="about" class="my-5 py-5 bg-text">
+              <h4 class="display-5 fw-normal py-4" data-aos="fade-up">
+                Our craft : a bag should carry more than it looks like it can, and look better for having been used.
+              </h4>
+              <div class="row d-flex flex-wrap" data-aos="fade-up">
+                <div class="col-lg-6 pb-5">
+                  <p class="text-secondary">
+                    Most bags fail in the same three places: the strap anchors tear, the base sags, and the lining splits. We build against all three — straps riveted and stitched through a doubled panel, a base cut from the firmest part of the hide, and a cotton lining sewn in rather than glued.
+                  </p>
+                  <div
+                    class="data-info"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <div class="row py-5">
+                      <div class="col-md-2">
+                        <div class="data-info py-3">
+                          <span class="meta-date">2016</span>
+                        </div>
+                      </div>
+                      <div class="col-md-9 offset-lg-1">
+                        <h5 class="info-title fw-medium">A studio of four</h5>
+                        <p>
+                          We started with one bench and a hand-stitching pony.
+                          Everything still leaves through the same door.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="data-info"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <div class="row py-5">
+                      <div class="col-md-2">
+                        <div class="data-info py-3">
+                          <span class="meta-date">2 days</span>
+                        </div>
+                      </div>
+                      <div class="col-md-9 offset-lg-1">
+                        <h5 class="info-title fw-medium">Per bag, by hand</h5>
+                        <p>
+                          Cut, skived, glued, saddle-stitched and burnished. No
+                          production line, no shortcuts on the parts you cannot
+                          see.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 pb-5">
+                  <p class="text-secondary">
+                    We keep the range small on purpose. Four shapes — crossbody, tote, shoulder and travel — in leather we have used long enough to know how it ages. If a bag does not earn the space it takes on your shoulder, we would rather not make it.
+                  </p>
+                  <div
+                    class="data-info"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                  >
+                    <div class="row py-5">
+                      <div class="col-md-2">
+                        <div class="data-info py-3">
+                          <span class="meta-date">1.8 mm</span>
+                        </div>
+                      </div>
+                      <div class="col-md-9 offset-lg-1">
+                        <h5 class="info-title fw-medium">
+                          Vegetable-tanned leather
+                        </h5>
+                        <p>
+                          Body panels at 1.8 mm, tanned with bark rather than chrome, so the leather darkens with use instead of cracking.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="data-info"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                  >
+                    <div class="row py-5">
+                      <div class="col-md-2">
+                        <div class="data-info py-3">
+                          <span class="meta-date">2 yrs</span>
+                        </div>
+                      </div>
+                      <div class="col-md-9 offset-lg-1">
+                        <h5 class="info-title fw-medium">Free repairs</h5>
+                        <p>
+                          Stitching, edges and hardware, repaired at no charge.
+                          Send it back and we will put it right.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="making" class="my-5 py-5">
+              <div class="section-header my-5" data-aos="fade-up">
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <span class="text-muted text-uppercase"
+                      >from hide to bag</span
+                    >
+                    <h4 class="display-5 fw-normal">How It's Made</h4>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up">
+                    <p>
+                      Six stages, all of them under one roof. Nothing is sent out, and every seam that has to carry weight is stitched by hand.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-0 craft-flow"
+              >
+                <div
+                  class="col craft-step"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <span class="craft-step__icon">
+                    <svg
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <use xlink:href="#craft-hide"></use>
+                    </svg>
+                  </span>
+                  <span class="craft-step__num">01</span>
+                  <h5 class="craft-step__title fw-medium">Choose the hide</h5>
+                  <p class="craft-step__text">
+                    We pick each panel by hand, working around stretch marks and
+                    the thin spots near the belly.
+                  </p>
+                </div>
+                <div
+                  class="col craft-step"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <span class="craft-step__icon">
+                    <svg
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <use xlink:href="#craft-cut"></use>
+                    </svg>
+                  </span>
+                  <span class="craft-step__num">02</span>
+                  <h5 class="craft-step__title fw-medium">Cut the pieces</h5>
+                  <p class="craft-step__text">
+                    Every panel is cut on the grain with a round knife, so the bag holds its shape once it is full.
+                  </p>
+                </div>
+                <div
+                  class="col craft-step"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <span class="craft-step__icon">
+                    <svg
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <use xlink:href="#craft-skive"></use>
+                    </svg>
+                  </span>
+                  <span class="craft-step__num">03</span>
+                  <h5 class="craft-step__title fw-medium">Skive and line</h5>
+                  <p class="craft-step__text">
+                    Edges are pared thin where they fold and the cotton lining is sewn in, never glued.
+                  </p>
+                </div>
+                <div
+                  class="col craft-step"
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
+                  <span class="craft-step__icon">
+                    <svg
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <use xlink:href="#craft-stitch"></use>
+                    </svg>
+                  </span>
+                  <span class="craft-step__num">04</span>
+                  <h5 class="craft-step__title fw-medium">Saddle-stitch</h5>
+                  <p class="craft-step__text">
+                    Two needles and one waxed thread, pulled by hand. If a
+                    stitch breaks, the rest hold.
+                  </p>
+                </div>
+                <div
+                  class="col craft-step"
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
+                  <span class="craft-step__icon">
+                    <svg
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <use xlink:href="#craft-burnish"></use>
+                    </svg>
+                  </span>
+                  <span class="craft-step__num">05</span>
+                  <h5 class="craft-step__title fw-medium">Burnish the edges</h5>
+                  <p class="craft-step__text">
+                    Sanded, damped and polished by friction until the edge is
+                    smooth, sealed and dark.
+                  </p>
+                </div>
+                <div
+                  class="col craft-step"
+                  data-aos="fade-up"
+                  data-aos-delay="700"
+                >
+                  <span class="craft-step__icon">
+                    <svg
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <use xlink:href="#craft-finish"></use>
+                    </svg>
+                  </span>
+                  <span class="craft-step__num">06</span>
+                  <h5 class="craft-step__title fw-medium">Check and pack</h5>
+                  <p class="craft-step__text">
+                    Loaded and carried to check the balance, stamped inside, then packed in its cotton dust bag.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section id="experience" class="my-5 py-5 bg-text">
+              <div class="pt-4 mt-4">
+                <span class="text-muted text-uppercase"
+                  >bags in everyday use</span
+                >
+
+                <h4 class="display-5 fw-normal" data-aos="fade-up">
+                  Everyday Carry
+                </h4>
+              </div>
+              <div class="py-4 my-4">
+                <div class="mb-5">
+                  <p>
+                    <button class="filter-button active" data-filter="*">
+                      All
+                    </button>
+                    <button class="filter-button" data-filter=".crossbody">Crossbody</button>
+                    <button class="filter-button" data-filter=".tote">Totes</button>
+                    <button class="filter-button" data-filter=".shoulder">Shoulder</button>
+                    <button class="filter-button" data-filter=".travel">
+                      Travel
+                    </button>
+                  </p>
+                </div>
+
+                <div class="isotope-container row" data-aos="fade-up">
+                  <div class="item crossbody col-md-4">
+                    <a
+                      href="/images/everyday-carry/carry-5.jpg"
+                      title="BOHUC bag"
+                      class="image-link"
+                    >
+                      <img
+                        class="portfolio-img"
+                        src="/images/everyday-carry/carry-5.jpg"
+                        class="img-fluid"
+                        alt="image"
+                      />
+                      <div class="description align-items-center">
+                        <h4 class="text-center">Milano Crossbody, chestnut</h4>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="item tote col-md-4">
+                    <a
+                      href="/images/everyday-carry/carry-8.jpg"
+                      title="BOHUC bag"
+                      class="image-link"
+                    >
+                      <img
+                        class="portfolio-img"
+                        src="/images/everyday-carry/carry-8.jpg"
+                        class="img-fluid"
+                        alt="image"
+                      />
+                      <div class="description align-items-center">
+                        <h4 class="text-center">Atelier Tote, tan</h4>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="item tote col-md-4">
+                    <a
+                      href="/images/everyday-carry/carry-2.jpg"
+                      title="BOHUC bag"
+                      class="image-link"
+                    >
+                      <img
+                        class="portfolio-img"
+                        src="/images/everyday-carry/carry-2.jpg"
+                        class="img-fluid"
+                        alt="image"
+                      />
+                      <div class="description align-items-center">
+                        <h4 class="text-center">Sol Shoulder Bag, cognac</h4>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="item crossbody col-md-4">
+                    <a
+                      href="/images/everyday-carry/carry-1.jpg"
+                      title="BOHUC bag"
+                      class="image-link"
+                    >
+                      <img
+                        class="portfolio-img"
+                        src="/images/everyday-carry/carry-1.jpg"
+                        class="img-fluid"
+                        alt="image"
+                      />
+                      <div class="description align-items-center">
+                        <h4 class="text-center">Nocturne Mini, black</h4>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="item shoulder col-md-4">
+                    <a
+                      href="/images/everyday-carry/carry-3.jpg"
+                      title="BOHUC bag"
+                      class="image-link"
+                    >
+                      <img
+                        class="portfolio-img"
+                        src="/images/everyday-carry/carry-3.jpg"
+                        class="img-fluid"
+                        alt="image"
+                      />
+                      <div class="description align-items-center">
+                        <h4 class="text-center">Verdant Bucket, olive</h4>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="item travel col-md-4">
+                    <a
+                      href="/images/everyday-carry/carry-4.jpg"
+                      title="BOHUC bag"
+                      class="image-link"
+                    >
+                      <img
+                        class="portfolio-img"
+                        src="/images/everyday-carry/carry-4.jpg"
+                        class="img-fluid"
+                        alt="image"
+                      />
+                      <div class="description align-items-center">
+                        <h4 class="text-center">Campo Market Tote, sand</h4>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="item shoulder col-md-4">
+                    <a
+                      href="/images/everyday-carry/carry-7.jpg"
+                      title="BOHUC bag"
+                      class="image-link"
+                    >
+                      <img
+                        class="portfolio-img"
+                        src="/images/everyday-carry/carry-7.jpg"
+                        class="img-fluid"
+                        alt="image"
+                      />
+                      <div class="description align-items-center">
+                        <h4 class="text-center">Metro Sling, navy</h4>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="item travel col-md-4">
+                    <a
+                      href="/images/everyday-carry/carry-6.jpg"
+                      title="BOHUC bag"
+                      class="image-link"
+                    >
+                      <img
+                        class="portfolio-img"
+                        src="/images/everyday-carry/carry-6.jpg"
+                        class="img-fluid"
+                        alt="image"
+                      />
+                      <div class="description align-items-center">
+                        <h4 class="text-center">Weekender Duffel, black</h4>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="item crossbody col-md-4">
+                    <a
+                      href="/images/everyday-carry/carry-5.jpg"
+                      title="BOHUC bag"
+                      class="image-link"
+                    >
+                      <img
+                        class="portfolio-img"
+                        src="/images/everyday-carry/carry-5.jpg"
+                        class="img-fluid"
+                        alt="image"
+                      />
+                      <div class="description align-items-center">
+                        <h4 class="text-center">Atelier Tote, olive</h4>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="portfolio" class="my-5 py-5">
+              <div class="section-header my-5" data-aos="fade-up">
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <span class="text-muted text-uppercase"
+                      >new this season</span
+                    >
+                    <h4 class="display-5 fw-normal" data-aos="fade-up">
+                      New In
+                    </h4>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up">
+                    <p>
+                      Four new colours this season, cut from the same hides as
+                      the core range. Each one is made to order, so tell us what
+                      you are after and we will start it this week.
+                    </p>
+                    <a href="#how-to-order" class="btn btn-dark px-5 py-3"
+                      >How to order</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper portfolio-Swiper portfolio-content py-5 z-0"
+                data-aos="fade-up"
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide hovereffect">
+                    <div class="image-holder">
+                      <a href="#how-to-order" title="bag details"
+                        ><img
+                          src="/images/new-in/new-in-1.jpg"
+                          alt="portfolio"
+                          class="img-fluid img-responsive"
+                      /></a>
+                    </div>
+                    <div
+                      class="caption d-flex justify-content-between align-items-center"
+                    >
+                      <a href="#how-to-order">
+                        <div class="overlay pt-3">
+                          <h2>Milano Crossbody — Chestnut</h2>
+                          <p class="icon-links">
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#facebook"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#instagram"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#twitter"></use>
+                              </svg>
+                            </a>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide hovereffect">
+                    <div class="image-holder">
+                      <a href="#how-to-order" title="bag details"
+                        ><img
+                          src="/images/new-in/new-in-2.jpg"
+                          alt="portfolio"
+                          class="img-fluid img-responsive"
+                      /></a>
+                    </div>
+                    <div
+                      class="caption d-flex justify-content-between align-items-center"
+                    >
+                      <a href="#how-to-order">
+                        <div class="overlay pt-3">
+                          <h2>Sol Shoulder Bag — Cognac</h2>
+                          <p class="icon-links">
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#facebook"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#instagram"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#twitter"></use>
+                              </svg>
+                            </a>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide hovereffect">
+                    <div class="image-holder">
+                      <a href="#how-to-order" title="bag details"
+                        ><img
+                          src="/images/new-in/new-in-3.jpg"
+                          alt="portfolio"
+                          class="img-fluid img-responsive"
+                      /></a>
+                    </div>
+                    <div
+                      class="caption d-flex justify-content-between align-items-center"
+                    >
+                      <a href="#how-to-order">
+                        <div class="overlay pt-3">
+                          <h2>Atelier Tote — Olive</h2>
+                          <p class="icon-links">
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#facebook"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#instagram"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#twitter"></use>
+                              </svg>
+                            </a>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide hovereffect">
+                    <div class="image-holder">
+                      <a href="#how-to-order" title="bag details"
+                        ><img
+                          src="/images/new-in/new-in-4.jpg"
+                          alt="portfolio"
+                          class="img-fluid img-responsive"
+                      /></a>
+                    </div>
+                    <div
+                      class="caption d-flex justify-content-between align-items-center"
+                    >
+                      <a href="#how-to-order">
+                        <div class="overlay pt-3">
+                          <h2>Metro Sling — Navy</h2>
+                          <p class="icon-links">
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#facebook"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#instagram"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#twitter"></use>
+                              </svg>
+                            </a>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide hovereffect">
+                    <div class="image-holder">
+                      <a href="#how-to-order" title="bag details"
+                        ><img
+                          src="/images/new-in/new-in-2.jpg"
+                          alt="portfolio"
+                          class="img-fluid img-responsive"
+                      /></a>
+                    </div>
+                    <div
+                      class="caption d-flex justify-content-between align-items-center"
+                    >
+                      <a href="#how-to-order">
+                        <div class="overlay pt-3">
+                          <h2>Verdant Bucket — Black</h2>
+                          <p class="icon-links">
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#facebook"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#instagram"></use>
+                              </svg>
+                            </a>
+
+                            <a href="#" class="fw-bold pe-1 social-link">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#twitter"></use>
+                              </svg>
+                            </a>
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </section>
+
+            <section id="how-to-order" class="my-5 py-5">
+              <div class="section-header my-5" data-aos="fade-up">
+                <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                    <span class="text-muted text-uppercase"
+                      >ordering is simple</span
+                    >
+                    <h4 class="display-5 fw-normal">How To Order</h4>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up">
+                    <p>
+                      Every bag is made to order in the studio, so we arrange things by message rather than a checkout. It takes four short steps, and you can ask us anything along the way.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-0">
+                <div
+                  class="col order-step"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <span class="order-step__index">01</span>
+                  <h5 class="order-step__title fw-medium">Pick your bag</h5>
+                  <p class="order-step__text">
+                    Browse the bags above and note the name and colour you want. Each one is listed with its current price.
+                  </p>
+                </div>
+                <div
+                  class="col order-step"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <span class="order-step__index">02</span>
+                  <h5 class="order-step__title fw-medium">Send us a message</h5>
+                  <p class="order-step__text">
+                    Email the studio or use the form below with the bag name. Tell us what you carry day to day and we will check the size.
+                  </p>
+                </div>
+                <div
+                  class="col order-step"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <span class="order-step__index">03</span>
+                  <h5 class="order-step__title fw-medium">
+                    Confirm the details
+                  </h5>
+                  <p class="order-step__text">
+                    We reply with the leather in stock, the final price, how
+                    long it will take to make and how to pay. Nothing is charged
+                    until you say yes.
+                  </p>
+                </div>
+                <div
+                  class="col order-step"
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
+                  <span class="order-step__index">04</span>
+                  <h5 class="order-step__title fw-medium">We make and ship</h5>
+                  <p class="order-step__text">
+                    Your bag is cut, stitched and burnished, then sent in its cotton dust bag with tracking so you can follow it to your door.
+                  </p>
+                </div>
+              </div>
+
+              <div class="order-note mt-5" data-aos="fade-up">
+                <div class="row align-items-center g-4">
+                  <div class="col-lg-8">
+                    <h5 class="fw-medium mb-2">Not sure which bag suits you?</h5>
+                    <p class="mb-0">
+                      Tell us what you carry — a laptop, a camera, a day's worth of everything — and we will suggest two or three that fit. We usually reply within one working day.
+                    </p>
+                  </div>
+                  <div class="col-lg-4 text-lg-end">
+                    <a href="#contact" class="btn btn-dark px-5 py-3"
+                      >Message the studio</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="contact" class="my-5 py-5 bg-text">
+              <div class="container">
+                <div class="row mb-5">
+                  <div class="col-lg-6" data-aos="fade-up">
+                    <span class="text-muted text-uppercase">get in touch</span>
+                    <h4 class="display-5 fw-normal" data-aos="fade-up">
+                      Contact Us
+                    </h4>
+                    <p>
+                      Questions about sizing, leather or a repair? Write to the
+                      studio and one of us will answer — usually within a
+                      working day.
+                    </p>
+                  </div>
+                </div>
+                <div class="row d-flex g-5">
+                  <div class="col-lg-7" data-aos="fade-up">
+                    <h3 class="fw-medium">Frequently Asked Questions</h3>
+                    <div class="accordion" id="accordionExample2">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordion-collapse1"
+                            aria-expanded="true"
+                            aria-controls="accordion-collapse1"
+                          >
+                            How much does each bag hold?
+                          </button>
+                        </h2>
+                        <div
+                          id="accordion-collapse1"
+                          class="accordion-collapse collapse show"
+                          aria-labelledby="headingOne"
+                          data-bs-parent="#accordionExample2"
+                        >
+                          <div class="accordion-body">
+                            The Atelier Tote takes a 14-inch laptop flat, the Sol and Verdant hold a day's things with room to spare, and the Nocturne Mini is phone, cards and keys only. Tell us what you carry and we will match it.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordion-collapse2"
+                            aria-expanded="false"
+                            aria-controls="accordion-collapse2"
+                          >
+                            How should I care for the leather?
+                          </button>
+                        </h2>
+                        <div
+                          id="accordion-collapse2"
+                          class="accordion-collapse collapse"
+                          aria-labelledby="headingTwo"
+                          data-bs-parent="#accordionExample2"
+                        >
+                          <div class="accordion-body">
+                            Keep it dry and let it darken on its own. If it gets
+                            wet, let it dry away from heat. A light conditioner once or twice a year is plenty — most bags need far less care than people expect.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordion-collapse3"
+                            aria-expanded="false"
+                            aria-controls="accordion-collapse3"
+                          >
+                            What if the stitching, strap or zip fails?
+                          </button>
+                        </h2>
+                        <div
+                          id="accordion-collapse3"
+                          class="accordion-collapse collapse"
+                          aria-labelledby="headingThree"
+                          data-bs-parent="#accordionExample2"
+                        >
+                          <div class="accordion-body">
+                            Send it back within two years and we repair it free
+                            of charge, including the hardware. After that we
+                            still repair it, at cost. We would rather mend a bag than sell you a second one.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-5">
+                    <div class="right-content" data-aos="fade-up">
+                      <div class="element-header align-right">
+                        <h3 class="fw-medium">
+                          Tell us what you carry and we will point you to the right bag.
+                        </h3>
+                      </div>
+
+                      <div class="contact-form py-4">
+                        <form id="form" class="form-group">
+                          <div class="pb-2">
+                            <input
+                              type="text"
+                              name="name"
+                              placeholder="Your Full Name"
+                              class="form-control"
+                              autocomplete="name"
+                              required
+                            />
+                          </div>
+                          <div class="pb-2">
+                            <input
+                              type="email"
+                              name="address"
+                              placeholder="Your Email Address"
+                              class="form-control"
+                              autocomplete="email"
+                              required
+                            />
+                          </div>
+                          <div class="pb-2">
+                            <textarea
+                              name="message"
+                              placeholder="Your Message"
+                              rows="6"
+                              class="form-control"
+                              required
+                            ></textarea>
+                          </div>
+                          <button
+                            type="submit"
+                            name="submit"
+                            class="btn btn-dark w-100 btn-rounded"
+                          >
+                            Submit
+                          </button>
+                          <p
+                            id="form-status"
+                            class="text-secondary pt-3 mb-0"
+                            role="status"
+                            aria-live="polite"
+                          ></p>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
