@@ -63,75 +63,123 @@
 
 /* ---------- How it's made ---------- */
 
-.craft-step {
-  padding: 0 0.75rem 2.5rem;
-  position: relative;
-  text-align: center;
+/* A vertical story: text and image alternate sides, stacking to text-then-image
+   on narrow screens (the reverse is applied from lg up only). */
+.craft-block {
+  margin-bottom: clamp(4rem, 8vw, 7rem);
 }
 
-/* A connector runs from each badge to the next, so the row reads as one flow.
-   Anchored per step rather than on the row, so it survives a change of count. */
-.craft-step::after {
-  background-color: var(--bs-border-color);
-  content: '';
-  height: 1px;
-  left: 50%;
-  position: absolute;
-  top: 2rem;
-  width: 100%;
+.craft-block:last-child {
+  margin-bottom: 0;
 }
 
-.craft-step:last-child::after {
-  display: none;
-}
-
-/* The badge is opaque so the connector appears to pass behind it. */
-.craft-step__icon {
-  align-items: center;
-  background-color: var(--bs-white);
-  border: 1px solid var(--bs-border-color);
-  border-radius: 50%;
-  color: var(--bs-black);
-  display: inline-flex;
-  height: 4rem;
-  justify-content: center;
-  position: relative;
-  transition: background-color 0.3s ease-out, border-color 0.3s ease-out, color 0.3s ease-out;
-  width: 4rem;
-  z-index: 1;
-}
-
-.craft-step:hover .craft-step__icon {
-  background-color: var(--bs-black);
-  border-color: var(--bs-black);
-  color: var(--bs-white);
-}
-
-.craft-step__num {
+.craft-block__num {
   color: var(--bs-gray);
   display: block;
   font-size: 0.75rem;
   letter-spacing: 0.18em;
-  margin: 1.25rem 0 0.35rem;
+  margin-bottom: 1rem;
 }
 
-/* Reserve two lines so the descriptions line up across the row, whatever
-   length the individual titles happen to be. */
-.craft-step__title {
-  margin-bottom: 0.5rem;
-  min-height: calc(2em * var(--heading-line-height));
+.craft-block__title {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  margin-bottom: 1.5rem;
 }
 
-.craft-step__text {
+.craft-block__text p {
   color: var(--bs-secondary);
   font-size: 0.95rem;
+}
+
+.craft-block__text p:last-child {
   margin-bottom: 0;
 }
 
-/* Below lg the steps wrap, so a horizontal connector would point nowhere. */
+.craft-block__media {
+  background-color: var(--bs-light);
+  overflow: hidden;
+}
+
+/* A fixed ratio keeps the row heights even whatever the source photo is, and
+   reserves the space before the image loads. */
+.craft-block__media img {
+  aspect-ratio: 4 / 3;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
 @media (max-width: 991px) {
-  .craft-step::after {
+  .craft-block__media img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* ---------- Mobile top bar ---------- */
+
+/* The template floats the toggle loose over the page, where it lands on top of
+   product photos that are themselves links. Giving it a band of its own keeps
+   the two tap areas apart. */
+.mobile-bar {
+  align-items: center;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--bs-border-color);
+  display: flex;
+  height: 3.5rem;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 1.25rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  /* Above the drawer (z-index 8) so the close icon stays reachable. */
+  z-index: 12;
+}
+
+.mobile-bar__logo img {
+  display: block;
+  height: 1.5rem;
+  width: auto;
+}
+
+@media (max-width: 991px) {
+  /* Unpin the toggle from the viewport and let the bar place it, at a 44px
+     tap target rather than the template's 26px. */
+  .menu-btn {
+    align-items: center;
+    display: flex;
+    height: 2.75rem;
+    justify-content: center;
+    margin: 0;
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 2.75rem;
+  }
+
+  /* Keep the mock's 26px icon inside the larger target. Relative positioning
+     keeps the two pseudo-element bars anchored to the middle one. */
+  .menu-btn > span {
+    position: relative;
+    width: 1.625rem;
+  }
+
+  /* The bar already shows the mark, so the drawer does not repeat it, and its
+     content starts below the bar. */
+  #header-nav {
+    padding-top: 3.5rem;
+  }
+
+  #header-nav .site-logo {
     display: none;
+  }
+
+  /* An anchor jump lands the section at y=0, which is behind the fixed bar.
+     Stop that much earlier so nothing starts underneath it. */
+  main section[id] {
+    scroll-margin-top: 3.5rem;
   }
 }
 

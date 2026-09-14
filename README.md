@@ -57,12 +57,14 @@ for and what breaks if you remove it:
 ```text
 public/images/brand/           logo
 public/images/products/        #home gallery, one file per product id
+public/images/making/          #making story, one file per stage
 public/images/everyday-carry/  #experience grid
 public/images/new-in/          #portfolio carousel
 ```
 
-Only `products/` is addressed through JSON; the other three are referenced
-directly from `index.html`.
+Only `products/` is addressed through JSON; the others are referenced directly
+from `index.html`. The files in `making/` are placeholders copied from
+`everyday-carry/` — replace them with real workshop photographs.
 
 ## The #home gallery
 

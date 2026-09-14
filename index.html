@@ -441,105 +441,6 @@
             fill="black"
           />
         </symbol>
-
-        <!-- bag-making stages -->
-        <symbol
-          xmlns="http://www.w3.org/2000/svg"
-          id="craft-hide"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.4"
-            stroke-linejoin="round"
-            d="M3.8 8.2c.5-2.5 2.7-3.9 5-3.2 1.9.6 3.8.5 5.6-.3 2.3-1 4.4.4 4.6 2.9.1 1.6-.2 2.9-.8 4.2-.6 1.4-.7 2.8-.3 4.2.5 2.1-1.1 3.7-3.2 3.2-1.6-.4-3.2-.3-4.7.3-2.3.9-4.4-.5-4.5-3-.1-1.5.2-2.9.8-4.2.5-1.3.7-2.7.5-4.1Z"
-          />
-        </symbol>
-        <symbol
-          xmlns="http://www.w3.org/2000/svg"
-          id="craft-cut"
-          viewBox="0 0 24 24"
-        >
-          <g
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M12 2.5v6" />
-            <path d="M4.5 8.5h15a7.5 7.5 0 0 1-15 0Z" />
-            <path d="M3 20.5h18" stroke-dasharray="2.5 2.5" />
-          </g>
-        </symbol>
-        <symbol
-          xmlns="http://www.w3.org/2000/svg"
-          id="craft-skive"
-          viewBox="0 0 24 24"
-        >
-          <g
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M21 18.5H3l9.5-4.5H21z" />
-            <path d="M7.6 9.6 11.4 12.8" />
-            <path d="M4.2 6.4 7.8 5.2 8.9 8.8Z" />
-          </g>
-        </symbol>
-        <symbol
-          xmlns="http://www.w3.org/2000/svg"
-          id="craft-stitch"
-          viewBox="0 0 24 24"
-        >
-          <g
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="18.4" cy="5.6" r="1.7" />
-            <path d="M17.2 6.8 7.5 16.5" />
-            <path d="M3 20.5h18" stroke-dasharray="2.5 2.5" />
-          </g>
-        </symbol>
-        <symbol
-          xmlns="http://www.w3.org/2000/svg"
-          id="craft-burnish"
-          viewBox="0 0 24 24"
-        >
-          <g
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M20.5 12v6.5H9.5a3.25 3.25 0 0 1 0-6.5z" />
-            <path d="M4.6 7.4 6.2 9M10.2 4.4V6.7M15.8 6.2 14.6 8.2" />
-          </g>
-        </symbol>
-        <symbol
-          xmlns="http://www.w3.org/2000/svg"
-          id="craft-finish"
-          viewBox="0 0 24 24"
-        >
-          <g
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M5.4 8.4h13.2l-1.2 10.2a2 2 0 0 1-2 1.8H8.6a2 2 0 0 1-2-1.8z" />
-          <path d="M9 8.4V6.6a3 3 0 0 1 6 0v1.8" />
-          <path d="M9.6 13.4 11.4 15.2 14.6 12" />
-          </g>
-        </symbol>
         <symbol
           xmlns="http://www.w3.org/2000/svg"
           id="whatsapp"
@@ -552,7 +453,19 @@
         </symbol>
       </defs>
     </svg>
-    <a class="menu-btn"><span></span></a>
+    <!-- Mobile only: gives the toggle a band of its own so it never sits on a
+         tappable image. The sidebar replaces it from lg up. -->
+    <div class="mobile-bar d-lg-none">
+      <a class="mobile-bar__logo" href="index.html">
+        <img
+          src="/images/brand/logo.png"
+          alt="BOHUC"
+          width="1346"
+          height="253"
+        />
+      </a>
+      <a class="menu-btn" aria-label="Menu"><span></span></a>
+    </div>
 
     <div class="container-fluid overflow-hidden">
       <header
@@ -769,151 +682,105 @@
               <div class="section-header my-5" data-aos="fade-up">
                 <div class="row justify-content-center">
                   <div class="col-lg-6">
-                    <span class="text-muted text-uppercase"
-                      >from hide to bag</span
-                    >
+                    <span class="text-muted text-uppercase">from hide to bag</span>
                     <h4 class="display-5 fw-normal">How It's Made</h4>
                   </div>
                   <div class="col-lg-6" data-aos="fade-up">
                     <p>
-                      Six stages, all of them under one roof. Nothing is sent out, and every seam that has to carry weight is stitched by hand.
+                      Six stages, all of them under one roof. Nothing is sent
+                      out, and every seam that has to carry weight is stitched
+                      by hand.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div
-                class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-0 craft-flow"
-              >
-                <div
-                  class="col craft-step"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <span class="craft-step__icon">
-                    <svg
-                      width="30"
-                      height="30"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <use xlink:href="#craft-hide"></use>
-                    </svg>
-                  </span>
-                  <span class="craft-step__num">01</span>
-                  <h5 class="craft-step__title fw-medium">Choose the hide</h5>
-                  <p class="craft-step__text">
-                    We pick each panel by hand, working around stretch marks and
-                    the thin spots near the belly.
-                  </p>
+              <div class="craft-story">
+              <article class="craft-block row align-items-center g-4 g-lg-5">
+                <div class="col-lg-5 craft-block__text" data-aos="fade-up">
+                  <span class="craft-block__num">01</span>
+                  <h3 class="craft-block__title fw-medium">Choose the hide</h3>
+                  <p>Choosing the leather is the first decision, and the only one that cannot be undone later.</p>
+                  <p>We buy full hides rather than pre-cut panels, so the pattern can be laid where the leather is firmest, working around brands, stretch marks and the loose fibre near the belly.</p>
+                  <p>Vegetable tanning keeps the leather's own character. It darkens with handling instead of wearing thin, so a bag carried for three years looks better than one still in its box.</p>
                 </div>
-                <div
-                  class="col craft-step"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <span class="craft-step__icon">
-                    <svg
-                      width="30"
-                      height="30"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <use xlink:href="#craft-cut"></use>
-                    </svg>
-                  </span>
-                  <span class="craft-step__num">02</span>
-                  <h5 class="craft-step__title fw-medium">Cut the pieces</h5>
-                  <p class="craft-step__text">
-                    Every panel is cut on the grain with a round knife, so the bag holds its shape once it is full.
-                  </p>
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                  <figure class="craft-block__media mb-0">
+                    <img src="/images/making/step-1.jpg" alt="Choose the hide" class="img-fluid" loading="lazy" />
+                  </figure>
                 </div>
-                <div
-                  class="col craft-step"
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                >
-                  <span class="craft-step__icon">
-                    <svg
-                      width="30"
-                      height="30"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <use xlink:href="#craft-skive"></use>
-                    </svg>
-                  </span>
-                  <span class="craft-step__num">03</span>
-                  <h5 class="craft-step__title fw-medium">Skive and line</h5>
-                  <p class="craft-step__text">
-                    Edges are pared thin where they fold and the cotton lining is sewn in, never glued.
-                  </p>
+              </article>
+
+              <article class="craft-block row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+                <div class="col-lg-5 craft-block__text" data-aos="fade-up">
+                  <span class="craft-block__num">02</span>
+                  <h3 class="craft-block__title fw-medium">Cut the panels</h3>
+                  <p>Every panel is cut by hand with a round knife, along the grain, so the leather pulls in the direction it is strongest.</p>
+                  <p>A bag lives or dies by its base. Ours is cut from the firmest section along the spine of the hide, so it keeps its shape when the bag is full.</p>
                 </div>
-                <div
-                  class="col craft-step"
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                >
-                  <span class="craft-step__icon">
-                    <svg
-                      width="30"
-                      height="30"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <use xlink:href="#craft-stitch"></use>
-                    </svg>
-                  </span>
-                  <span class="craft-step__num">04</span>
-                  <h5 class="craft-step__title fw-medium">Saddle-stitch</h5>
-                  <p class="craft-step__text">
-                    Two needles and one waxed thread, pulled by hand. If a
-                    stitch breaks, the rest hold.
-                  </p>
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                  <figure class="craft-block__media mb-0">
+                    <img src="/images/making/step-2.jpg" alt="Cut the panels" class="img-fluid" loading="lazy" />
+                  </figure>
                 </div>
-                <div
-                  class="col craft-step"
-                  data-aos="fade-up"
-                  data-aos-delay="600"
-                >
-                  <span class="craft-step__icon">
-                    <svg
-                      width="30"
-                      height="30"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <use xlink:href="#craft-burnish"></use>
-                    </svg>
-                  </span>
-                  <span class="craft-step__num">05</span>
-                  <h5 class="craft-step__title fw-medium">Burnish the edges</h5>
-                  <p class="craft-step__text">
-                    Sanded, damped and polished by friction until the edge is
-                    smooth, sealed and dark.
-                  </p>
+              </article>
+
+              <article class="craft-block row align-items-center g-4 g-lg-5">
+                <div class="col-lg-5 craft-block__text" data-aos="fade-up">
+                  <span class="craft-block__num">03</span>
+                  <h3 class="craft-block__title fw-medium">Skive and line</h3>
+                  <p>Wherever leather folds or overlaps, it is pared down by hand until the seam lies flat. Too thick and the fold cracks open; too thin and it tears.</p>
+                  <p>The cotton lining is sewn in, never glued. Glue fails quietly after a year or two, while stitching announces itself long before it gives way.</p>
                 </div>
-                <div
-                  class="col craft-step"
-                  data-aos="fade-up"
-                  data-aos-delay="700"
-                >
-                  <span class="craft-step__icon">
-                    <svg
-                      width="30"
-                      height="30"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <use xlink:href="#craft-finish"></use>
-                    </svg>
-                  </span>
-                  <span class="craft-step__num">06</span>
-                  <h5 class="craft-step__title fw-medium">Check and pack</h5>
-                  <p class="craft-step__text">
-                    Loaded and carried to check the balance, stamped inside, then packed in its cotton dust bag.
-                  </p>
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                  <figure class="craft-block__media mb-0">
+                    <img src="/images/making/step-3.jpg" alt="Skive and line" class="img-fluid" loading="lazy" />
+                  </figure>
                 </div>
+              </article>
+
+              <article class="craft-block row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+                <div class="col-lg-5 craft-block__text" data-aos="fade-up">
+                  <span class="craft-block__num">04</span>
+                  <h3 class="craft-block__title fw-medium">Saddle-stitch</h3>
+                  <p>Every seam that has to carry weight is sewn by hand with two needles and a single waxed thread — the same stitch used on saddlery.</p>
+                  <p>A machine lockstitch unravels from one broken thread. A saddle stitch does not: each stitch is locked by the one beside it, so a cut thread stays where it is.</p>
+                  <p>The seam advances about 3 mm at a time. It is slow, and it is why the stitching outlasts everything else on the bag.</p>
+                </div>
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                  <figure class="craft-block__media mb-0">
+                    <img src="/images/making/step-4.jpg" alt="Saddle-stitch" class="img-fluid" loading="lazy" />
+                  </figure>
+                </div>
+              </article>
+
+              <article class="craft-block row align-items-center g-4 g-lg-5">
+                <div class="col-lg-5 craft-block__text" data-aos="fade-up">
+                  <span class="craft-block__num">05</span>
+                  <h3 class="craft-block__title fw-medium">Burnish the edges</h3>
+                  <p>Raw cut edges are sanded through successive grits, damped, then polished by friction until the fibres lie down and close.</p>
+                  <p>Edge work is the honest test of a maker. It takes as long as the stitching does, and it shows immediately when it has been rushed.</p>
+                </div>
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                  <figure class="craft-block__media mb-0">
+                    <img src="/images/making/step-5.jpg" alt="Burnish the edges" class="img-fluid" loading="lazy" />
+                  </figure>
+                </div>
+              </article>
+
+              <article class="craft-block row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+                <div class="col-lg-5 craft-block__text" data-aos="fade-up">
+                  <span class="craft-block__num">06</span>
+                  <h3 class="craft-block__title fw-medium">Check and pack</h3>
+                  <p>Each finished bag is loaded and carried for a day to see how it hangs, where it rubs and whether the strap sits right on the shoulder.</p>
+                  <p>Then it is stamped inside, wrapped in its cotton dust bag and sent. Anything that is not right goes back to the bench rather than out to you.</p>
+                </div>
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+                  <figure class="craft-block__media mb-0">
+                    <img src="/images/making/step-6.jpg" alt="Check and pack" class="img-fluid" loading="lazy" />
+                  </figure>
+                </div>
+              </article>
               </div>
             </section>
 

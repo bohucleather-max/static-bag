@@ -17,10 +17,21 @@ import { initContactForm } from './contact-form.js';
 
 function initMenu() {
   const button = document.querySelector('.menu-btn');
+  const header = document.querySelector('#header-nav');
   if (!button) return;
+
+  const setOpen = (open) => document.body.classList.toggle('nav-active', open);
+
   button.addEventListener('click', (event) => {
     event.preventDefault();
-    document.body.classList.toggle('nav-active');
+    setOpen(!document.body.classList.contains('nav-active'));
+  });
+
+  // Following a link scrolls the page but leaves the drawer sitting over it —
+  // the mock's own script never closed it. Delegated so it also catches clicks
+  // that land on the SVG inside a social link.
+  header?.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setOpen(false);
   });
 }
 
