@@ -112,19 +112,27 @@
 /* A vertical story: text and image alternate sides, stacking to text-then-image
    on narrow screens (the reverse is applied from lg up only). */
 .craft-block {
+  padding-top: 2.5rem;
   margin-bottom: clamp(4rem, 8vw, 7rem);
+  position: relative;
 }
 
 .craft-block:last-child {
   margin-bottom: 0;
 }
 
-.craft-block__num {
-  color: var(--bs-gray);
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  margin-bottom: 1rem;
+/* Both columns start at the same line, and that line is drawn: without it the
+   text floats in the white space beside a much taller photo. The block is a
+   .row, which hangs half a gutter outside the container, so the rule is inset
+   to the column edges rather than set as a border. */
+.craft-block::before {
+  background-color: var(--bs-border-color);
+  content: '';
+  height: 1px;
+  left: calc(var(--bs-gutter-x) * 0.5);
+  position: absolute;
+  right: calc(var(--bs-gutter-x) * 0.5);
+  top: 0;
 }
 
 .craft-block__title {
@@ -170,7 +178,8 @@
   align-items: start;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  margin-bottom: clamp(3.5rem, 7vw, 6rem);
+  /* The notes below belong to the photographs, so they sit close under them. */
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .diptych__shot {
@@ -203,18 +212,14 @@
   box-shadow: 0 0 0 0.75rem var(--bs-body-bg, #fff);
 }
 
-.diptych__caption {
+/* The caption for each photograph heads the column of text that goes with it:
+   left column for the 2018 photo, right column for the 2021 one. */
+.diptych__note {
   color: var(--bs-secondary);
   font-size: 0.8rem;
   letter-spacing: 0.04em;
-  max-width: 24rem;
-  padding-top: 1rem;
-}
-
-/* Pushed to the far right so it clears the photo lapping over this one. */
-.diptych__caption--end {
-  margin-left: auto;
-  text-align: right;
+  margin-bottom: 1.25rem;
+  max-width: 34ch;
 }
 
 .diptych__year {
@@ -227,28 +232,13 @@
   margin-bottom: 0.25rem;
 }
 
-/* The beats are plain text blocks on purpose — the order steps already own the
-   ruled-and-numbered grid, and this section should not repeat it. */
-.story__year {
-  color: var(--bs-gray);
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-}
-
-.story__title {
-  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
-  margin-bottom: 1rem;
-  max-width: 24ch;
-}
-
-.story__beat p {
+/* No headings or markers under the photographs — the years in the notes carry
+   the structure on their own. */
+.about-lead {
   color: var(--bs-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-bottom: 0;
-  max-width: 54ch;
+  max-width: 46ch;
 }
 
 /* There is no room to lap one photo over the other at this width, and an inset
@@ -276,11 +266,8 @@
     object-position: center 60%;
   }
 
-  .diptych__caption,
-  .diptych__caption--end {
-    margin-left: 0;
+  .diptych__note {
     max-width: none;
-    text-align: left;
   }
 }
 
