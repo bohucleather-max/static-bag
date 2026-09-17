@@ -178,8 +178,6 @@
   align-items: start;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  /* The notes below belong to the photographs, so they sit close under them. */
-  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .diptych__shot {
@@ -212,14 +210,23 @@
   box-shadow: 0 0 0 0.75rem var(--bs-body-bg, #fff);
 }
 
-/* The caption for each photograph heads the column of text that goes with it:
-   left column for the 2018 photo, right column for the 2021 one. */
+/* Each note and its paragraph sit directly under the photograph they belong
+   to, so the two years read as two columns of their own. */
 .diptych__note {
   color: var(--bs-secondary);
   font-size: 0.8rem;
   letter-spacing: 0.04em;
-  margin-bottom: 1.25rem;
-  max-width: 34ch;
+  margin-bottom: 0.75rem;
+  max-width: 40ch;
+  padding-top: 1rem;
+}
+
+/* The text belonging to the 2021 photograph starts as far left as it can:
+   right where the 2018 photograph ends. That photo runs to column line 6 and
+   this figure starts at line 5, so it laps over exactly one of this figure's
+   eight columns — an eighth of its width — plus the 0.75rem white ring. */
+.diptych__shot--now :where(.diptych__note--end, .about-lead--end) {
+  margin-left: calc(12.5% + 1.25rem);
 }
 
 .diptych__year {
@@ -269,6 +276,12 @@
   .diptych__note {
     max-width: none;
   }
+
+  /* Stacked, nothing laps over anything, so the text runs the full measure. */
+  .diptych__shot--now :where(.diptych__note--end, .about-lead--end) {
+    margin-left: 0;
+  }
+
 }
 
 /* ---------- Mobile top bar ---------- */
