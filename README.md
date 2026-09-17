@@ -45,8 +45,8 @@ public/data/            products.json, site.json (categories.json is unused)
 public/images/          one folder per section (see below)
 ```
 
-Sections are `#home`, `#about`, `#making`, `#experience`, `#portfolio`,
-`#how-to-order` and `#contact`. The sidebar menu links to those anchors, and Bootstrap's scrollspy
+Sections are `#home`, `#collection`, `#how-its-made`, `#about`,
+`#how-to-order` and `#contact`, in that order. The sidebar menu links to those anchors, and Bootstrap's scrollspy
 highlights the current one.
 
 ## Images
@@ -57,9 +57,8 @@ for and what breaks if you remove it:
 ```text
 public/images/brand/           logo
 public/images/products/        #home gallery, one file per product id
-public/images/making/          #making story, one file per stage
-public/images/everyday-carry/  #experience grid
-public/images/new-in/          #portfolio carousel
+public/images/making/          #how-its-made story, one file per stage
+public/images/everyday-carry/  #collection grid
 ```
 
 Only `products/` is addressed through JSON; the others are referenced directly

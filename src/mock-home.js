@@ -1,12 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'aos/dist/aos.css';
-import 'swiper/css/bundle';
 import 'chocolat/dist/css/chocolat.css';
 import './css/theme.css';
 import './css/site.css';
 import 'bootstrap';
 import AOS from 'aos';
-import Swiper from 'swiper/bundle';
 import Isotope from 'isotope-layout';
 import Chocolat from 'chocolat';
 import { initTextFx } from './utils/text-fx.js';
@@ -56,20 +54,6 @@ function initPortfolioGrid() {
   });
 }
 
-function initPortfolioSlider() {
-  if (!document.querySelector('.portfolio-Swiper')) return;
-  new Swiper('.portfolio-Swiper', {
-    slidesPerView: 4,
-    spaceBetween: 30,
-    pagination: { el: '.swiper-pagination', clickable: true },
-    breakpoints: {
-      300: { slidesPerView: 2 },
-      768: { slidesPerView: 2, spaceBetween: 20 },
-      1200: { slidesPerView: 3, spaceBetween: 30 },
-    },
-  });
-}
-
 function initLightbox() {
   const links = document.querySelectorAll('.image-link');
   links.forEach((link) => {
@@ -86,7 +70,6 @@ function initLightbox() {
 document.addEventListener('DOMContentLoaded', async () => {
   initMenu();
   initTextFx();
-  initPortfolioSlider();
 
   // Reveal the static sections as soon as the bundle runs. Every [data-aos]
   // element sits at opacity 0 until AOS starts, so waiting for the fetches

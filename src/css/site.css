@@ -61,6 +61,52 @@
   color: var(--bs-secondary);
 }
 
+/* The note used to end in a button; the social links stand in for it, so they
+   need enough weight to read as the call to action. */
+.order-note__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--bs-dark);
+  border-radius: 50%;
+  color: var(--bs-dark);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.order-note__social a:hover,
+.order-note__social a:focus-visible {
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
+}
+
+.order-note__social svg {
+  fill: currentColor;
+}
+
+/* The sidebar's social row sits under the email rule, so the icons only need a
+   comfortable tap target and a quiet resting colour. */
+.sidebar-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: -0.75rem; /* pull the first icon back in line with the email */
+  color: var(--bs-secondary);
+  transition: color 0.2s ease;
+}
+
+.sidebar-social a:hover,
+.sidebar-social a:focus-visible {
+  color: var(--bs-dark);
+}
+
+.sidebar-social svg {
+  fill: currentColor;
+}
+
 /* ---------- How it's made ---------- */
 
 /* A vertical story: text and image alternate sides, stacking to text-then-image
@@ -112,6 +158,129 @@
 @media (max-width: 991px) {
   .craft-block__media img {
     aspect-ratio: 3 / 2;
+  }
+}
+
+/* ---------- About ---------- */
+
+/* The two photographs are the section: the home desk of 2018 and the workshop
+   of 2021, overlapped so the years read as one picture rather than two rows.
+   A 12-column grid places them in the same grid row, offset vertically. */
+.diptych {
+  align-items: start;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+
+.diptych__shot {
+  grid-row: 1;
+}
+
+/* The later photo sits high and wide on the right; the early one hangs lower
+   on the left and laps over it, so it has to sit on top. */
+.diptych__shot--now {
+  grid-column: 5 / -1;
+}
+
+.diptych__shot--then {
+  grid-column: 1 / 6;
+  margin-top: clamp(3rem, 8vw, 7rem);
+  position: relative;
+  z-index: 1;
+}
+
+.diptych__shot img {
+  background-color: var(--bs-light);
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+/* A white margin around the overlapping photo keeps the two edges apart where
+   they cross. */
+.diptych__shot--then img {
+  box-shadow: 0 0 0 0.75rem var(--bs-body-bg, #fff);
+}
+
+.diptych__caption {
+  color: var(--bs-secondary);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  max-width: 24rem;
+  padding-top: 1rem;
+}
+
+/* Pushed to the far right so it clears the photo lapping over this one. */
+.diptych__caption--end {
+  margin-left: auto;
+  text-align: right;
+}
+
+.diptych__year {
+  color: var(--bs-dark);
+  display: block;
+  font-family: var(--heading-font);
+  font-size: 1.25rem;
+  font-weight: var(--heading-font-weight);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25rem;
+}
+
+/* The beats are plain text blocks on purpose — the order steps already own the
+   ruled-and-numbered grid, and this section should not repeat it. */
+.story__year {
+  color: var(--bs-gray);
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.story__title {
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  margin-bottom: 1rem;
+  max-width: 24ch;
+}
+
+.story__beat p {
+  color: var(--bs-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  max-width: 54ch;
+}
+
+/* There is no room to lap one photo over the other at this width, and an inset
+   photo only reads as a misaligned one. Both run the full measure instead,
+   flush with the text, and the caption carries the year. */
+@media (max-width: 991px) {
+  .diptych {
+    display: block;
+  }
+
+  .diptych__shot {
+    margin: 0;
+  }
+
+  .diptych__shot + .diptych__shot {
+    margin-top: 2.5rem;
+  }
+
+  /* The portrait photo would otherwise run taller than the viewport; cropping
+     it to the landscape ratio keeps the pair reading as a pair. */
+  .diptych__shot--then img {
+    aspect-ratio: 4 / 3;
+    box-shadow: none;
+    object-fit: cover;
+    object-position: center 60%;
+  }
+
+  .diptych__caption,
+  .diptych__caption--end {
+    margin-left: 0;
+    max-width: none;
+    text-align: left;
   }
 }
 
