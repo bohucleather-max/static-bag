@@ -519,10 +519,11 @@
           </div>
           <div class="mt-5">
             <div class="email-links">
-              <a
-                href="mailto:studio@will-objects.com"
-                class="py-3 my-3 border-bottom border-black d-flex"
-                >studio@will-objects.com</a
+              <!-- No href while the studio address is being finalised; set
+                   contact.linkEmail in public/data/site.json to turn the
+                   mailto link back on. -->
+              <a class="py-3 my-3 border-bottom border-black d-flex"
+                >The Lab Atelier LLC</a
               >
             </div>
             <ul
@@ -564,7 +565,7 @@
             <section id="collection" class="my-5 py-5 bg-text">
               <div class="pt-4 mt-4">
                 <span class="text-muted text-uppercase"
-                  >bags in everyday use</span
+                  >leather goods in everyday use</span
                 >
 
                 <h4 class="display-5 fw-normal" data-aos="fade-up">
@@ -574,169 +575,176 @@
               <div class="py-4 my-4">
                 <div class="mb-5">
                   <p>
-                    <button class="filter-button active" data-filter="*">
-                      All
-                    </button>
-                    <button class="filter-button" data-filter=".crossbody">Crossbody</button>
-                    <button class="filter-button" data-filter=".tote">Totes</button>
-                    <button class="filter-button" data-filter=".shoulder">Shoulder</button>
-                    <button class="filter-button" data-filter=".travel">
-                      Travel
-                    </button>
+                    <button class="filter-button active" data-filter="*">All</button>
+                    <button class="filter-button" data-filter=".wallet">Wallets</button>
+                    <button class="filter-button" data-filter=".cardholder">Card &amp; Passport</button>
+                    <button class="filter-button" data-filter=".keyfob">Key Cases</button>
+                    <button class="filter-button" data-filter=".accessory">Accessories</button>
                   </p>
                 </div>
 
+                <!-- Grid images use a 600w/1000w srcset; the lightbox link opens
+                     the 1600px file, which is only fetched on click. -->
                 <div class="isotope-container row" data-aos="fade-up">
-                  <div class="item crossbody col-md-4">
-                    <a
-                      href="/images/everyday-carry/carry-5.jpg"
-                      title="BOHUC bag"
-                      class="image-link"
-                    >
+                  <div class="item wallet col-md-4">
+                    <a href="/images/collection/item-01-1600.webp" title="Long Wallet, sky blue" class="image-link">
                       <img
-                        class="portfolio-img"
-                        src="/images/everyday-carry/carry-5.jpg"
-                        class="img-fluid"
-                        alt="image"
+                        class="portfolio-img img-fluid"
+                        src="/images/collection/item-01-1000.webp"
+                        srcset="/images/collection/item-01-600.webp 600w, /images/collection/item-01-1000.webp 1000w"
+                        sizes="(min-width: 1400px) 380px, (min-width: 768px) 30vw, 100vw"
+                        width="600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Long Wallet, sky blue"
                       />
                       <div class="description align-items-center">
-                        <h4 class="text-center">Milano Crossbody, chestnut</h4>
+                        <h4 class="text-center">Long Wallet, sky blue</h4>
                       </div>
                     </a>
                   </div>
-                  <div class="item tote col-md-4">
-                    <a
-                      href="/images/everyday-carry/carry-8.jpg"
-                      title="BOHUC bag"
-                      class="image-link"
-                    >
+                  <div class="item cardholder col-md-4">
+                    <a href="/images/collection/item-05-1600.webp" title="Passport Holder, tan" class="image-link">
                       <img
-                        class="portfolio-img"
-                        src="/images/everyday-carry/carry-8.jpg"
-                        class="img-fluid"
-                        alt="image"
+                        class="portfolio-img img-fluid"
+                        src="/images/collection/item-05-1000.webp"
+                        srcset="/images/collection/item-05-600.webp 600w, /images/collection/item-05-1000.webp 1000w"
+                        sizes="(min-width: 1400px) 380px, (min-width: 768px) 30vw, 100vw"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Passport Holder, tan"
                       />
                       <div class="description align-items-center">
-                        <h4 class="text-center">Atelier Tote, tan</h4>
+                        <h4 class="text-center">Passport Holder, tan</h4>
                       </div>
                     </a>
                   </div>
-                  <div class="item tote col-md-4">
-                    <a
-                      href="/images/everyday-carry/carry-2.jpg"
-                      title="BOHUC bag"
-                      class="image-link"
-                    >
+                  <div class="item keyfob col-md-4">
+                    <a href="/images/collection/item-07-1600.webp" title="Car Key Case, black" class="image-link">
                       <img
-                        class="portfolio-img"
-                        src="/images/everyday-carry/carry-2.jpg"
-                        class="img-fluid"
-                        alt="image"
+                        class="portfolio-img img-fluid"
+                        src="/images/collection/item-07-1000.webp"
+                        srcset="/images/collection/item-07-600.webp 600w, /images/collection/item-07-1000.webp 1000w"
+                        sizes="(min-width: 1400px) 380px, (min-width: 768px) 30vw, 100vw"
+                        width="600"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Car Key Case, black"
                       />
                       <div class="description align-items-center">
-                        <h4 class="text-center">Sol Shoulder Bag, cognac</h4>
+                        <h4 class="text-center">Car Key Case, black</h4>
                       </div>
                     </a>
                   </div>
-                  <div class="item crossbody col-md-4">
-                    <a
-                      href="/images/everyday-carry/carry-1.jpg"
-                      title="BOHUC bag"
-                      class="image-link"
-                    >
+                  <div class="item wallet col-md-4">
+                    <a href="/images/collection/item-02-1600.webp" title="Bifold Wallet, tan" class="image-link">
                       <img
-                        class="portfolio-img"
-                        src="/images/everyday-carry/carry-1.jpg"
-                        class="img-fluid"
-                        alt="image"
+                        class="portfolio-img img-fluid"
+                        src="/images/collection/item-02-1000.webp"
+                        srcset="/images/collection/item-02-600.webp 600w, /images/collection/item-02-1000.webp 1000w"
+                        sizes="(min-width: 1400px) 380px, (min-width: 768px) 30vw, 100vw"
+                        width="600"
+                        height="583"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Bifold Wallet, tan"
                       />
                       <div class="description align-items-center">
-                        <h4 class="text-center">Nocturne Mini, black</h4>
+                        <h4 class="text-center">Bifold Wallet, tan</h4>
                       </div>
                     </a>
                   </div>
-                  <div class="item shoulder col-md-4">
-                    <a
-                      href="/images/everyday-carry/carry-3.jpg"
-                      title="BOHUC bag"
-                      class="image-link"
-                    >
+                  <div class="item accessory col-md-4">
+                    <a href="/images/collection/item-09-1600.webp" title="Leather Belt, navy" class="image-link">
                       <img
-                        class="portfolio-img"
-                        src="/images/everyday-carry/carry-3.jpg"
-                        class="img-fluid"
-                        alt="image"
+                        class="portfolio-img img-fluid"
+                        src="/images/collection/item-09-1000.webp"
+                        srcset="/images/collection/item-09-600.webp 600w, /images/collection/item-09-1000.webp 1000w"
+                        sizes="(min-width: 1400px) 380px, (min-width: 768px) 30vw, 100vw"
+                        width="600"
+                        height="800"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Leather Belt, navy"
                       />
                       <div class="description align-items-center">
-                        <h4 class="text-center">Verdant Bucket, olive</h4>
+                        <h4 class="text-center">Leather Belt, navy</h4>
                       </div>
                     </a>
                   </div>
-                  <div class="item travel col-md-4">
-                    <a
-                      href="/images/everyday-carry/carry-4.jpg"
-                      title="BOHUC bag"
-                      class="image-link"
-                    >
+                  <div class="item cardholder col-md-4">
+                    <a href="/images/collection/item-06-1600.webp" title="Card Holder, grey" class="image-link">
                       <img
-                        class="portfolio-img"
-                        src="/images/everyday-carry/carry-4.jpg"
-                        class="img-fluid"
-                        alt="image"
+                        class="portfolio-img img-fluid"
+                        src="/images/collection/item-06-1000.webp"
+                        srcset="/images/collection/item-06-600.webp 600w, /images/collection/item-06-1000.webp 1000w"
+                        sizes="(min-width: 1400px) 380px, (min-width: 768px) 30vw, 100vw"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Card Holder, grey"
                       />
                       <div class="description align-items-center">
-                        <h4 class="text-center">Campo Market Tote, sand</h4>
+                        <h4 class="text-center">Card Holder, grey</h4>
                       </div>
                     </a>
                   </div>
-                  <div class="item shoulder col-md-4">
-                    <a
-                      href="/images/everyday-carry/carry-7.jpg"
-                      title="BOHUC bag"
-                      class="image-link"
-                    >
+                  <div class="item wallet col-md-4">
+                    <a href="/images/collection/item-03-1600.webp" title="Zip Long Wallet, grey" class="image-link">
                       <img
-                        class="portfolio-img"
-                        src="/images/everyday-carry/carry-7.jpg"
-                        class="img-fluid"
-                        alt="image"
+                        class="portfolio-img img-fluid"
+                        src="/images/collection/item-03-1000.webp"
+                        srcset="/images/collection/item-03-600.webp 600w, /images/collection/item-03-1000.webp 1000w"
+                        sizes="(min-width: 1400px) 380px, (min-width: 768px) 30vw, 100vw"
+                        width="600"
+                        height="433"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Zip Long Wallet, grey"
                       />
                       <div class="description align-items-center">
-                        <h4 class="text-center">Metro Sling, navy</h4>
+                        <h4 class="text-center">Zip Long Wallet, grey</h4>
                       </div>
                     </a>
                   </div>
-                  <div class="item travel col-md-4">
-                    <a
-                      href="/images/everyday-carry/carry-6.jpg"
-                      title="BOHUC bag"
-                      class="image-link"
-                    >
+                  <div class="item keyfob col-md-4">
+                    <a href="/images/collection/item-08-1600.webp" title="Car Key Case, navy" class="image-link">
                       <img
-                        class="portfolio-img"
-                        src="/images/everyday-carry/carry-6.jpg"
-                        class="img-fluid"
-                        alt="image"
+                        class="portfolio-img img-fluid"
+                        src="/images/collection/item-08-1000.webp"
+                        srcset="/images/collection/item-08-600.webp 600w, /images/collection/item-08-1000.webp 1000w"
+                        sizes="(min-width: 1400px) 380px, (min-width: 768px) 30vw, 100vw"
+                        width="600"
+                        height="984"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Car Key Case, navy"
                       />
                       <div class="description align-items-center">
-                        <h4 class="text-center">Weekender Duffel, black</h4>
+                        <h4 class="text-center">Car Key Case, navy</h4>
                       </div>
                     </a>
                   </div>
-                  <div class="item crossbody col-md-4">
-                    <a
-                      href="/images/everyday-carry/carry-5.jpg"
-                      title="BOHUC bag"
-                      class="image-link"
-                    >
+                  <div class="item wallet col-md-4">
+                    <a href="/images/collection/item-04-1600.webp" title="Slim Bifold, brown" class="image-link">
                       <img
-                        class="portfolio-img"
-                        src="/images/everyday-carry/carry-5.jpg"
-                        class="img-fluid"
-                        alt="image"
+                        class="portfolio-img img-fluid"
+                        src="/images/collection/item-04-1000.webp"
+                        srcset="/images/collection/item-04-600.webp 600w, /images/collection/item-04-1000.webp 1000w"
+                        sizes="(min-width: 1400px) 380px, (min-width: 768px) 30vw, 100vw"
+                        width="600"
+                        height="455"
+                        loading="lazy"
+                        decoding="async"
+                        alt="Slim Bifold, brown"
                       />
                       <div class="description align-items-center">
-                        <h4 class="text-center">Atelier Tote, olive</h4>
+                        <h4 class="text-center">Slim Bifold, brown</h4>
                       </div>
                     </a>
                   </div>
@@ -947,7 +955,7 @@
                   <span class="order-step__index">01</span>
                   <h5 class="order-step__title fw-medium">Pick your bag</h5>
                   <p class="order-step__text">
-                    Browse the bags above and note the name and colour you want. Each one is listed with its current price.
+                    Browse the pieces above and note the name and colour you want. Ask us for the current price.
                   </p>
                 </div>
                 <div

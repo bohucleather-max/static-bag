@@ -10,13 +10,8 @@ function escapeHTML(value = '') {
   return element.innerHTML;
 }
 
-function formatPrice(value, currency = 'USD') {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency,
-    maximumFractionDigits: 0,
-  }).format(value);
-}
+// Columns are a third of the main area on desktop and full width below lg.
+const GRID_SIZES = '(min-width: 1400px) 380px, (min-width: 992px) 28vw, 100vw';
 
 // Spread items over the mock's three columns, handing spares to the middle
 // column first so a seven-product catalogue reproduces the mock's 2/3/2 shape.
@@ -39,17 +34,25 @@ function revealDelay(index) {
   return Math.min(200 + Math.max(0, index - 1) * 100, 700);
 }
 
-function renderItem(product, index) {
-  const src = assetPath(product.images.main);
+// The grid gets a 600w/1000w srcset and the lightbox the 1600px file, so the
+// large one is only downloaded when someone opens it. `small` and `large` are
+// optional and fall back to `main`; width/height reserve the space so the
+// masonry does not jump while images arrive.
+function renderItem(product, index, aboveFold) {
+  const { main, small, large, width, height } = product.images;
+  const src = assetPath(main);
+  const srcset = small ? ` srcset="${assetPath(small)} 600w, ${src} 1000w" sizes="${GRID_SIZES}"` : '';
+  const size = width && height ? ` width="${width}" height="${height}"` : '';
+  const loading = aboveFold ? '' : ' loading="lazy"';
   const name = escapeHTML(product.name);
   return `
                 <div class="item">
-                  <a href="${src}" title="${name}" class="image-link">
-                    <img src="${src}" class="img-fluid" data-aos="fade-up" data-aos-delay="${revealDelay(index)}"
-                      alt="${name}" />
+                  <a href="${assetPath(large || main)}" title="${name}" class="image-link">
+                    <img src="${src}"${srcset}${size}${loading} decoding="async" class="img-fluid"
+                      data-aos="fade-up" data-aos-delay="${revealDelay(index)}" alt="${name}" />
                     <div class="overlay"></div>
                     <div class="description">
-                      <h4 class="text-center">${name} <span class="fw-normal">${formatPrice(product.price, product.currency)}</span></h4>
+                      <h4 class="text-center">${name}</h4>
                     </div>
                   </a>
                 </div>`;
@@ -60,7 +63,6 @@ function isRenderable(product) {
     product
     && typeof product.name === 'string' && product.name
     && typeof product.images?.main === 'string' && product.images.main
-    && typeof product.price === 'number'
     && product.available !== false,
   );
 }
@@ -81,6 +83,6 @@ export async function renderHomeGallery() {
 
   let index = 0;
   root.innerHTML = splitIntoColumns(renderable).map((column) => `
-              <div class="col-lg-4 mb-4 mb-lg-0">${column.map((product) => renderItem(product, index++)).join('')}
+              <div class="col-lg-4 mb-4 mb-lg-0">${column.map((product, row) => renderItem(product, index++, row === 0)).join('')}
               </div>`).join('');
 }

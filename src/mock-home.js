@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   ]);
 
   if (site) applySiteContact(site);
-  initContactForm(site?.contact?.email);
+  initContactForm(site?.contact);
 
   // Chocolat and AOS both need the gallery markup that has only just arrived;
   // refreshHard re-scans the DOM so the new items animate too.

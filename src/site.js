@@ -9,13 +9,18 @@ export async function loadSite() {
   return response.json();
 }
 
-// The sidebar ships with a working address so the link is never broken or
-// empty; this replaces it with whatever site.json says.
+// The sidebar shows contact.name. The address itself is only shown and linked
+// when contact.linkEmail is true — while the studio's address is not final the
+// link stays inert, and flipping the flag turns the mailto back on.
 export function applySiteContact(site) {
-  const email = site?.contact?.email;
-  if (!email) return;
-  document.querySelectorAll('.email-links a[href^="mailto:"]').forEach((link) => {
-    link.setAttribute('href', `mailto:${email}`);
-    link.textContent = email;
+  const { name, email, linkEmail } = site?.contact || {};
+  document.querySelectorAll('.email-links a').forEach((link) => {
+    if (linkEmail && email) {
+      link.setAttribute('href', `mailto:${email}`);
+      link.textContent = name || email;
+    } else {
+      link.removeAttribute('href');
+      if (name) link.textContent = name;
+    }
   });
 }

@@ -3,7 +3,9 @@
   "tagline": "Leather bags, made by hand",
   "intro": "A small studio making bags that carry well and age better: full-grain leather, hand-stitched seams and hardware set one piece at a time.",
   "contact": {
+    "name": "The Lab Atelier LLC",
     "email": "shinleathergoods@gmail.com",
+    "linkEmail": false,
     "phone": "#"
   },
   "social": {

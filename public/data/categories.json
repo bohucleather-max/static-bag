@@ -1,24 +1,9 @@
 {
   "categories": [
-    {
-      "id": "crossbody",
-      "name": "Crossbody",
-      "slug": "crossbody"
-    },
-    {
-      "id": "tote",
-      "name": "Totes",
-      "slug": "tote"
-    },
-    {
-      "id": "shoulder",
-      "name": "Shoulder",
-      "slug": "shoulder"
-    },
-    {
-      "id": "travel",
-      "name": "Travel",
-      "slug": "travel"
-    }
+    { "id": "bag", "name": "Bags", "slug": "bag" },
+    { "id": "wallet", "name": "Wallets", "slug": "wallet" },
+    { "id": "cardholder", "name": "Card & Passport", "slug": "cardholder" },
+    { "id": "keyfob", "name": "Key Cases", "slug": "keyfob" },
+    { "id": "accessory", "name": "Accessories", "slug": "accessory" }
   ]
 }

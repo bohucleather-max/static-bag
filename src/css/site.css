@@ -85,6 +85,14 @@
   fill: currentColor;
 }
 
+/* While contact.linkEmail is off the sidebar contact has no href; keep it from
+   looking clickable. */
+.email-links a:not([href]),
+.email-links a:not([href]):hover {
+  color: inherit;
+  cursor: default;
+}
+
 /* The sidebar's social row sits under the email rule, so the icons only need a
    comfortable tap target and a quiet resting colour. */
 .sidebar-social a {

@@ -58,12 +58,25 @@ for and what breaks if you remove it:
 public/images/brand/           logo
 public/images/products/        #home gallery, one file per product id
 public/images/making/          #how-its-made story, one file per stage
-public/images/everyday-carry/  #collection grid
+public/images/collection/      #collection grid
 ```
 
 Only `products/` is addressed through JSON; the others are referenced directly
-from `index.html`. The files in `making/` are placeholders copied from
-`everyday-carry/` — replace them with real workshop photographs.
+from `index.html`. The files in `making/` are placeholders — replace them with
+real workshop photographs.
+
+Gallery photos (`products/`, `collection/`) come in three WebP sizes, made from
+the camera originals:
+
+```text
+<name>-600.webp    grid, phones and 1x screens   (srcset 600w)
+<name>-1000.webp   grid, retina screens          (srcset 1000w, also the src)
+<name>-1600.webp   lightbox only, fetched on click
+```
+
+Resize to 600 and 1000 px wide and to fit inside 1600×1600, WebP quality ~80.
+Keep the `width`/`height` of the 600 file in the markup or JSON so the masonry
+reserves space before the image arrives.
 
 ## The #home gallery
 
@@ -74,21 +87,25 @@ in JSON rather than in markup. Every other section is static HTML.
 ```json
 {
   "id": "product-001",
-  "name": "Milano Crossbody",
-  "price": 168,
-  "currency": "USD",
+  "name": "Top-Handle Bag",
   "available": true,
-  "images": { "main": "images/products/product-001.jpg" }
+  "images": {
+    "main": "images/products/product-001-1000.webp",
+    "small": "images/products/product-001-600.webp",
+    "large": "images/products/product-001-1600.webp",
+    "width": 600, "height": 900
+  }
 }
 ```
 
-`name`, `price` and `images.main` are required; a record missing any of them, or
+`name` and `images.main` are required; a record missing any of them, or
 marked `"available": false`, is skipped and logged to the console. `images.main`
-is resolved against the Vite base, so write it without a leading slash.
+is resolved against the Vite base, so write it without a leading slash. `small`
+(srcset 600w) and `large` (lightbox) are optional and fall back to `main`.
 
 Items are spread over three columns, spares going to the middle column first, so
-seven products reproduce the template's original 2/3/2 layout. The product name and
-price appear in the hover overlay and the image opens in the Chocolat lightbox.
+seven products reproduce the template's original 2/3/2 layout. The product name
+appears in the hover overlay (no prices are shown) and the image opens in the Chocolat lightbox.
 
 The other files in `public/data/` are leftovers from an earlier multi-page
 version and are not read by anything.
@@ -124,13 +141,19 @@ The address lives in `public/data/site.json` under `contact.email`. It is read
 at runtime, so changing it needs no rebuild — edit the JSON and refresh:
 
 ```json
-{ "contact": { "email": "studio@will-objects.com" } }
+{
+  "contact": {
+    "name": "The Lab Atelier LLC",
+    "email": "studio@example.com",
+    "linkEmail": false
+  }
+}
 ```
 
-On load, `src/site.js` fetches the file, rewrites the sidebar mailto link, and
-hands the address to the contact form. The sidebar ships with a working address
-in the markup, which stays in use if the fetch fails, so the link is never empty
-or broken.
+The sidebar shows `contact.name`. While `linkEmail` is `false` it is plain text
+with no mailto link and the address is not printed anywhere on the page; set it
+to `true` to turn the sidebar link back on (and show the address in the form's
+status message). The contact form always sends to `contact.email`.
 
 ## Static interactions
 
