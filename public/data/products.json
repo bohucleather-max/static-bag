@@ -1,20 +1,23 @@
 {
   "products": [
     {
-      "id": "product-001",
-      "slug": "top-handle-bag",
-      "name": "Top-Handle Bag",
-      "description": "A structured top-handle bag with a turn-lock strap closure, saddle-stitched in contrast thread.",
-      "category": "bag",
-      "featured": true,
+      "id": "product-007",
+      "slug": "watch-strap",
+      "name": "Watch Strap",
+      "description": "A padded leather watch strap with stitched edges and a tapered tail.",
+      "category": "accessory",
+      "featured": false,
       "available": true,
-      "materials": "Grained leather · Gold-tone hardware",
-      "colors": ["Tan"],
+      "materials": "Grained leather",
+      "colors": [
+        "Orange"
+      ],
       "images": {
-        "main": "images/products/product-001-1000.webp",
-        "small": "images/products/product-001-600.webp",
-        "large": "images/products/product-001-1600.webp",
-        "width": 600, "height": 900
+        "main": "images/products/product-007-1000.webp",
+        "small": "images/products/product-007-600.webp",
+        "large": "images/products/product-007-1600.webp",
+        "width": 600,
+        "height": 1001
       }
     },
     {
@@ -26,12 +29,15 @@
       "featured": true,
       "available": true,
       "materials": "Croc-grain leather · Gold-tone hardware",
-      "colors": ["Navy"],
+      "colors": [
+        "Navy"
+      ],
       "images": {
         "main": "images/products/product-002-1000.webp",
         "small": "images/products/product-002-600.webp",
         "large": "images/products/product-002-1600.webp",
-        "width": 600, "height": 808
+        "width": 600,
+        "height": 808
       }
     },
     {
@@ -43,12 +49,15 @@
       "featured": true,
       "available": true,
       "materials": "Croc-grain leather",
-      "colors": ["Tan"],
+      "colors": [
+        "Tan"
+      ],
       "images": {
         "main": "images/products/product-003-1000.webp",
         "small": "images/products/product-003-600.webp",
         "large": "images/products/product-003-1600.webp",
-        "width": 600, "height": 400
+        "width": 600,
+        "height": 400
       }
     },
     {
@@ -60,29 +69,35 @@
       "featured": false,
       "available": true,
       "materials": "Grained leather",
-      "colors": ["Grey"],
+      "colors": [
+        "Grey"
+      ],
       "images": {
         "main": "images/products/product-004-1000.webp",
         "small": "images/products/product-004-600.webp",
         "large": "images/products/product-004-1600.webp",
-        "width": 600, "height": 874
+        "width": 600,
+        "height": 874
       }
     },
     {
-      "id": "product-005",
-      "slug": "car-key-case",
-      "name": "Car Key Case",
-      "description": "A fitted leather case for a car key, with a swivel clip for a belt loop or bag.",
-      "category": "keyfob",
-      "featured": false,
+      "id": "product-001",
+      "slug": "croc-bifold-wallet-light",
+      "name": "Croc-Grain Bifold, light tan",
+      "description": "A slim bifold in a lighter croc-grain leather, with card slots on both sides and a full-length note compartment.",
+      "category": "wallet",
+      "featured": true,
       "available": true,
-      "materials": "Grained leather · Steel clip",
-      "colors": ["Pink"],
+      "materials": "Croc-grain leather",
+      "colors": [
+        "Light tan"
+      ],
       "images": {
-        "main": "images/products/product-005-1000.webp",
-        "small": "images/products/product-005-600.webp",
-        "large": "images/products/product-005-1600.webp",
-        "width": 600, "height": 858
+        "main": "images/products/product-001-1000.webp",
+        "small": "images/products/product-001-600.webp",
+        "large": "images/products/product-001-1600.webp",
+        "width": 600,
+        "height": 453
       }
     },
     {
@@ -94,29 +109,36 @@
       "featured": false,
       "available": true,
       "materials": "Grained leather · Steel ring",
-      "colors": ["Red", "Green"],
+      "colors": [
+        "Red",
+        "Green"
+      ],
       "images": {
         "main": "images/products/product-006-1000.webp",
         "small": "images/products/product-006-600.webp",
         "large": "images/products/product-006-1600.webp",
-        "width": 600, "height": 400
+        "width": 600,
+        "height": 400
       }
     },
     {
-      "id": "product-007",
-      "slug": "watch-strap",
-      "name": "Watch Strap",
-      "description": "A padded leather watch strap with stitched edges and a tapered tail.",
-      "category": "accessory",
+      "id": "product-005",
+      "slug": "car-key-case",
+      "name": "Car Key Case",
+      "description": "A fitted leather case for a car key, with a swivel clip for a belt loop or bag.",
+      "category": "keyfob",
       "featured": false,
       "available": true,
-      "materials": "Grained leather",
-      "colors": ["Orange"],
+      "materials": "Grained leather · Steel clip",
+      "colors": [
+        "Pink"
+      ],
       "images": {
-        "main": "images/products/product-007-1000.webp",
-        "small": "images/products/product-007-600.webp",
-        "large": "images/products/product-007-1600.webp",
-        "width": 600, "height": 1001
+        "main": "images/products/product-005-1000.webp",
+        "small": "images/products/product-005-600.webp",
+        "large": "images/products/product-005-1600.webp",
+        "width": 600,
+        "height": 858
       }
     },
     {
@@ -128,12 +150,15 @@
       "featured": false,
       "available": true,
       "materials": "Croc-grain leather",
-      "colors": ["Tan"],
+      "colors": [
+        "Tan"
+      ],
       "images": {
         "main": "images/products/product-008-1000.webp",
         "small": "images/products/product-008-600.webp",
         "large": "images/products/product-008-1600.webp",
-        "width": 600, "height": 773
+        "width": 600,
+        "height": 773
       }
     }
   ]

@@ -25,6 +25,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # Served at the root of the custom domain (thelab-atelier.com), not
+          # under /static-bag/ on github.io.
+          VITE_BASE_PATH: /
       - uses: actions/configure-pages@v5
         with:
           # Creates the Pages site if it does not exist yet, instead of failing

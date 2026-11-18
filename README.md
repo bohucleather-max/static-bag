@@ -1,4 +1,4 @@
-# BOHUC — leather bags
+# The Lab Atelier — leather goods
 
 A single-page shop front for a small leather-bag studio, built from the
 supplied HTML template. It uses Vite, Bootstrap 5 and vanilla JavaScript
@@ -28,8 +28,10 @@ npm run build
 npm run preview
 ```
 
-The default Vite base is `/static-bag/`, matching the repository name. For a
-custom domain or root deployment, build with `VITE_BASE_PATH=/ npm run build`.
+The default Vite base is `/static-bag/`, matching the repository name. The live
+site is served at the root of `thelab-atelier.com`, so the deploy workflow
+builds with `VITE_BASE_PATH=/`; do the same to preview it locally the way it is
+served: `VITE_BASE_PATH=/ npm run build`.
 
 ## Structure
 
@@ -55,7 +57,7 @@ Each section keeps its images in its own folder, so it is obvious what a file is
 for and what breaks if you remove it:
 
 ```text
-public/images/brand/           logo
+public/images/brand/           logo.png (sidebar), logo-wide.png (mobile bar)
 public/images/products/        #home gallery, one file per product id
 public/images/making/          #how-its-made story, one file per stage
 public/images/collection/      #collection grid
@@ -87,13 +89,13 @@ in JSON rather than in markup. Every other section is static HTML.
 ```json
 {
   "id": "product-001",
-  "name": "Top-Handle Bag",
+  "name": "Croc-Grain Bifold, light tan",
   "available": true,
   "images": {
     "main": "images/products/product-001-1000.webp",
     "small": "images/products/product-001-600.webp",
     "large": "images/products/product-001-1600.webp",
-    "width": 600, "height": 900
+    "width": 600, "height": 453
   }
 }
 ```

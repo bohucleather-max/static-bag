@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>BOHUC — Leather Bags</title>
+    <title>The Lab Atelier — Leather Goods</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="author" content="BOHUC" />
+    <meta name="author" content="The Lab Atelier" />
     <meta
       name="keywords"
-      content="leather bag, tote, crossbody, shoulder bag, travel bag, handmade"
+      content="leather goods, leather wallet, card holder, passport holder, key case, leather bag, handmade"
     />
     <meta
       name="description"
-      content="BOHUC makes leather bags by hand — totes, crossbodies, shoulder bags and weekenders, cut and stitched in a small studio."
+      content="The Lab Atelier makes leather goods by hand — wallets, card and passport holders, key cases and bags, cut and stitched in a small studio."
     />
 
     <script type="module" src="/src/mock-home.js"></script>
@@ -25,7 +25,9 @@
          after it, so the first screen is not waiting on a second round trip. -->
     <link rel="preload" href="/data/products.json" as="fetch" crossorigin />
     <link rel="preload" href="/data/site.json" as="fetch" crossorigin />
-    <link rel="preload" href="/images/brand/logo.png" as="image" />
+    <!-- Stacked mark in the desktop sidebar, one-line mark in the mobile bar. -->
+    <link rel="preload" href="/images/brand/logo.png" as="image" media="(min-width: 992px)" />
+    <link rel="preload" href="/images/brand/logo-wide.png" as="image" media="(max-width: 991.98px)" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
@@ -458,10 +460,10 @@
     <div class="mobile-bar d-lg-none">
       <a class="mobile-bar__logo" href="index.html">
         <img
-          src="/images/brand/logo.png"
-          alt="BOHUC"
-          width="1346"
-          height="253"
+          src="/images/brand/logo-wide.png"
+          alt="The Lab Atelier"
+          width="1315"
+          height="96"
         />
       </a>
       <a class="menu-btn" aria-label="Menu"><span></span></a>
@@ -480,10 +482,10 @@
               <a href="index.html">
                 <img
                   src="/images/brand/logo.png"
-                  alt="BOHUC"
+                  alt="The Lab Atelier"
                   class="img-fluid"
-                  width="1346"
-                  height="253"
+                  width="600"
+                  height="221"
                 />
               </a>
             </div>

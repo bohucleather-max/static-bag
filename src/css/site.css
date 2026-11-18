@@ -315,9 +315,18 @@
   z-index: 12;
 }
 
+/* The one-line mark is wide, so it may shrink on narrow phones rather than
+   run into the menu toggle. */
+.mobile-bar__logo {
+  margin-right: 1rem;
+  min-width: 0;
+}
+
 .mobile-bar__logo img {
   display: block;
-  height: 1.5rem;
+  height: auto;
+  max-height: 1.125rem;
+  max-width: 100%;
   width: auto;
 }
 
